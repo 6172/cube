@@ -85,97 +85,100 @@
             animEase = 'swing';
         }
 
-        this.each(function() {
-            // 防止重复绑定
-            var isBind = $.data(this, 'plugin_wheel');
+        // 防止重复绑定
+        var isBind = this.data('plugin_wheel');
 
-            if(isBind === 'bind') {
-                return ;
-            }else {
-                $.data(this, 'plugin_wheel', 'bind');
+        if(isBind === 'bind') {
+            return ;
+        }else {
+            this.data('plugin_wheel', 'bind');
+        }
+
+        var page = this,
+            wrap = page.children('.wheel');
+
+        var currentScreen = 0,
+            totalScreens = wrap.children().length;
+
+        var timer = null;
+
+        function moveTo(whichScreen, speed, callback) {
+            var func = animEase,
+                tempScreen = currentScreen,
+                moveDist = -1 * whichScreen + '00%'
+            
+            if(tempScreen === whichScreen) {
+                callback(tempScreen);
+                return;
             }
 
-            var page = $(this),
-                wrap = page.children('.wheel');
+            if(whichScreen >= 0 && whichScreen < totalScreens) {
+                (function(pos) {
+                    var animObj = {};
+                    animObj[animProp] = moveDist;
+                    wrap[animFunc](animObj, speed, func, function() {
+                        callback(whichScreen);
+                    });
+                })(whichScreen);
+                currentScreen = whichScreen;
+            }
+            // console.log('currentScreen: %d, whichScreen: %d', currentScreen, whichScreen);
+        }
 
-            var currentScreen = 0,
-                totalScreens = wrap.children().length;
+        function pageWheel(e) {
+            var delta = e.deltaY;
 
-            var timer = null;
+            clearTimeout(timer);
 
-            function moveTo(whichScreen, speed, callback) {
-                var func = animEase,
-                    tempScreen = currentScreen,
-                    moveDist = -1 * whichScreen + '00%'
-                
-                if(tempScreen === whichScreen) {
-                    callback();
-                    return;
-                }
-
-                if(whichScreen >= 0 && whichScreen < totalScreens) {
-                    (function(pos) {
-                        var animObj = {};
-                        animObj[animProp] = moveDist;
-                        wrap[animFunc](animObj, speed, func, function() {
-                            callback(whichScreen);
-                        });
-                    })(whichScreen);
-                    currentScreen = whichScreen;
-                }
-                // console.log('currentScreen: %d, whichScreen: %d', currentScreen, whichScreen);
+            // 按住 ctrl 来缩放页面的跳过
+            if(e.ctrlKey) {
+                return;
             }
 
-            function pageWheel(e) {
-                var delta = e.deltaY;
+            timer = setTimeout(function() {
+                var whichScreen = currentScreen;
 
-                clearTimeout(timer);
+                whichScreen = delta < 0 ? whichScreen + 1 : whichScreen - 1;
 
-                // 按住 ctrl 来缩放页面的跳过
-                if(e.ctrlKey) {
-                    return;
-                }
+                moveTo(whichScreen, defaults.speed, defaults.arrive);
+            }, 240);
+        }
 
-                timer = setTimeout(function() {
-                    var whichScreen = currentScreen;
-
-                    whichScreen = delta < 0 ? whichScreen + 1 : whichScreen - 1;
-
-                    moveTo(whichScreen, defaults.speed, defaults.arrive);
-                }, 240);
-            }
-
-            function pageChange(e) {
-                var code = e.keyCode;
-                switch(code) {
-                    case 38 :
-                        moveTo(currentScreen - 1, defaults.speed, defaults.arrive);
-                        break;
-                    case 40 :
-                        moveTo(currentScreen + 1, defaults.speed, defaults.arrive);
-                        break;
-                    default :
-                        return ;
-                };
-            }
-
-            function pageSwipe(e) {
-                if(e.type === 'swipeUp') {
-                    moveTo(currentScreen + 1, defaults.speed, defaults.arrive);
-                }else {
+        function pageChange(e) {
+            var code = e.keyCode;
+            switch(code) {
+                case 38 :
                     moveTo(currentScreen - 1, defaults.speed, defaults.arrive);
-                }
-            }
+                    break;
+                case 40 :
+                    moveTo(currentScreen + 1, defaults.speed, defaults.arrive);
+                    break;
+                default :
+                    return ;
+            };
+        }
 
-            if(tester.touch) {
-                page.on('swipeUp', pageSwipe).on('swipeDown', pageSwipe);
+        function pageSwipe(e) {
+            if(e.type === 'swipeUp') {
+                moveTo(currentScreen + 1, defaults.speed, defaults.arrive);
             }else {
-                page.on('mousewheel', pageWheel);
-                $(doc).on('keyup', pageChange);
+                moveTo(currentScreen - 1, defaults.speed, defaults.arrive);
             }
+        }
 
-            wheel.moveTo = moveTo;
-        });
+        function getPos() {
+            return currentScreen;
+        }
+
+        if(tester.touch) {
+            page.on('swipeUp', pageSwipe).on('swipeDown', pageSwipe);
+        }else {
+            page.on('mousewheel', pageWheel);
+            $(doc).on('keyup', pageChange);
+        }
+
+        wheel.moveTo = moveTo;
+        wheel.getPos = getPos;
 
         return wheel;
     };
@@ -248,6 +251,8 @@
         }
     }
 
+    // 点击遮罩关闭遮罩
+    cover.on('click', closeNav);
     nav.on('click', openNav);
     menu.on('click', closeNav);
     exports.closeNav = closeNav;
