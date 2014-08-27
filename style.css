@@ -194,7 +194,8 @@ body {
 
 #video-intro,
 .product-cover-wrap,
-#contact-from {
+#contact-from,
+.tip-arrow-down {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform: translateZ(0);
@@ -338,6 +339,54 @@ body {
         opacity: 1;
         transform: translate3d(0, 0, 0);
     }
+}
+
+@-webkit-keyframes arrow-anim {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    50% {
+        -webkit-transform: translate(0, 60%);
+        transform: translate(0, 60%);
+    }
+    100% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
+@-moz-keyframes arrow-anim {
+    0% {
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    50% {
+        -moz-transform: translate(0, 60%);
+        transform: translate(0, 60%);
+    }
+    100% {
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
+@-ms-keyframes arrow-anim {
+    0% {
+        -ms-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    50% {
+        -ms-transform: translate(0, 60%);
+        transform: translate(0, 60%);
+    }
+    100% {
+        -ms-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
+@keyframes arrow-anim {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(0, 60%); }
+    100% { transform: translate(0, 0); }
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -1389,6 +1438,21 @@ body {
     top: 0;
     width: 100%;
     z-index: 999;
+}
+
+.tip-arrow-down {
+    -webkit-animation: arrow-anim 1.5s ease 0s infinite;
+    -moz-animation: arrow-anim 1.5s ease 0s infinite;
+    -ms-animation: arrow-anim 1.5s ease 0s infinite;
+    animation: arrow-anim 1.5s ease 0s infinite;
+    background: url(images/tip-arrow-down.png) no-repeat center center;
+    bottom: 24px;
+    height: 40px;
+    left: 50%;
+    margin: 0 auto;
+    position: absolute;
+    width: 40px;
+    z-index: 888;
 }
 
 /* -------------------------------------------------------------------------------- */
