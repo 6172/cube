@@ -13,7 +13,8 @@
 
         var container = this,
             moveEle = container.children('.swipe'),
-            totalPos = moveEle.find('.swipe-child').length,
+            childrenEle = moveEle.find('.swipe-child'),
+            totalPos = childrenEle.length,
             currPos = 0,
             startWith,
             eachWidth,
@@ -88,6 +89,7 @@
                 startWith = near * eachWidth;
                 animObj[moveFun] = near + '00%';
                 delta = { x : 0, y : 0 };
+                childrenEle.removeClass('on').eq(currPos).addClass('on');
                 moveEle.stop().animate(animObj, 240);
             }
         }
@@ -117,6 +119,7 @@
             index = index > 0 ? -index : 0;
             startWith = index * eachWidth;
             animObj[moveFun] = index + '00%';
+            childrenEle.removeClass('on').eq(currPos).addClass('on');
             moveEle.animate(animObj, time);
         }
 
@@ -147,21 +150,12 @@
         e.stopPropagation();
     }
 
-    // 每个产品介绍的滚动相关
     var wrap = $('#wrap'),
         items = $('.list-item'),
         previews = items.find('.item-preview'),
+        titles = previews.find('.item-titles'),
         details = items.find('.item-detail');
 
-    items.wheel({
-        speed : 640,
-        arrive : function(index) {}
-    });
-
-    details.autoWheel();
-
-
-    // 列表缩放切换、点击切换
     var listNav = $('#list-nav'),
         listSwitch = listNav.find('.list-switch'),
         listReturn = listNav.find('.list-return'),
@@ -180,6 +174,7 @@
 
         if(!fullScreen) {
             listReturn.hide();
+            titles.hide();
             wrap[animFun]({
                 height : '100%',
                 width : '100%'
@@ -196,6 +191,7 @@
                 width : '32%'
             }, 600, function() {
                 swipeCtrl.reinit();
+                titles.fadeIn();
                 items.on('mousedown', markClickStart);
                 items.on('mouseup', switchOnThumb);
                 listSwitch.on('click', switchFullScreen);

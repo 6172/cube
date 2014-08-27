@@ -1542,38 +1542,68 @@ body {
 }
 
 .list-item {
-    cursor: pointer;
-    cursor: -webkit-grab;
-    cursor: -moz-grab;
     display: inline-block;
     height: 100%;
-    overflow: hidden;
+    overflow: visible;
+    position: relative;
     white-space: normal;
     width: 100%;
 }
 
-.list-item:active {
+.item-preview,
+.item-detail {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.item-preview {
+    cursor: pointer;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    z-index: 50;
+}
+
+.item-preview:active {
     cursor: -webkit-grabbing;
     cursor: -moz-grabbing;
 }
 
-.list-item-wrap {
-    position: relative;
-}
-
-.item-preview {
+.item-background {
+    height: 100%;
     overflow: hidden;
     position: relative;
+    width: 100%;
 }
 
-.item-preview > img {
-    z-index: 0;
+.item-titles {
+    color: #333;
+    position: absolute;
+    text-align: center;
+    top: 110%;
+    width: 100%;
+}
+
+.item-titles h2 {
+    font-size: 30px;
+    height: 40px;
+}
+
+.item-titles h3 {
+    font-size: 20px;
+    height: 30px;
+}
+
+.on .item-titles {
+    color: #fff;
 }
 
 .item-detail {
-    /*display: none;*/
-    background-color: #fafafa;
-    overflow-y: scroll;
+    background-color: purple;
+    overflow: hidden;
+    z-index: 30;
 }
 
 .item-detail p {

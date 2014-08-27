@@ -138,6 +138,7 @@
             videoThumb = videoBtn.find('img'),
             videoList = $('#video-intro'),
             videoListWraper = videoList.parent(),
+            videoArrow = videoListWraper.next(),
             videoListItems = videoList.find('a'),
             videoListNav = $('#video-intro-nav'),
             player = !!window.flowAPI ? flowAPI : video[0],
@@ -167,6 +168,7 @@
             videoListWraper.transition({
                 height : '5%'
             }, 300, 'ease', function() {
+                videoArrow.hide();
                 videoListNav.fadeIn();
                 videoListCtrl.css('display', 'none');
             });
@@ -179,6 +181,7 @@
             videoListWraper.transition({
                 height : '20%'
             }, 300, 'ease', function() {
+                videoArrow.show();
                 videoListNav.fadeOut();
                 videoListCtrl.css('display', '');
             });
