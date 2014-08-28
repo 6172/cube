@@ -49,7 +49,7 @@
 
 })(jQuery, document, window);
 
-(function($, doc, window) {
+(function($, doc, loc, window) {
 
     $(doc).ready(function() {
 
@@ -57,7 +57,7 @@
             e.stopPropagation();
         }
 
-        // 滚屏
+        // 滚屏/导航跳转
         var pages = $('#pages'),
             pagesCtrl;
 
@@ -69,14 +69,30 @@
                 videos : 2,
                 posts : 3,
                 contact : 4
-            },
-            hash = location.hash.replace('#', '');
+            };
 
         function addNavMark(index) {
             navMenuLines
                 .removeClass('on')
                 .eq(index)
                 .addClass('on');
+        }
+
+        function goToScreen(index) {
+            addNavMark(index);
+            pagesCtrl.moveTo(
+                index,
+                800,
+                window.closeNav
+            );
+        }
+
+        function hashDetector() {
+            var hashMatch = location.hash.match(/^#([A-Za-z]\w+)/),
+                hash = hashMatch == null ? '' : hashMatch[1];
+            if(navObj.hasOwnProperty(hash)) {
+                goToScreen(navObj[hash]);
+            }
         }
 
         pagesCtrl = pages.wheel({
@@ -86,25 +102,12 @@
             }
         });
 
-        // 导航跳转
-        hash = hash === '' ? 'introduce' : hash;
-        addNavMark(navObj[hash]);
-        pagesCtrl.moveTo(
-            navObj[hash],
-            1200,
-            window.closeNav
-        );
-
         navMenus.on('click', function(e) {
-            var index = $(this).data('index');
             e.stopPropagation();
-            addNavMark(index);
-            pagesCtrl.moveTo(
-                index,
-                800,
-                window.closeNav
-            );
         });
+        
+        hashDetector();
+        $(window).on('hashchange', hashDetector);
 
         // 第一屏：轮播图
         var intro = $('#main-intro'),
@@ -229,19 +232,24 @@
             var index = pagesCtrl.getPos();
             if(index === 2) {
                 if(e.keyCode === 32) {
-                    if(videoPlaying) {
-                        if(player.paused) {
-                            player.play();
-                        }else {
-                            player.pause();
-                        }
-                    }
+                    pausePlay();
                 }   
+            }
+        }
+
+        function pausePlay() {
+            if(videoPlaying) {
+                if(player.paused) {
+                    player.play();
+                }else {
+                    player.pause();
+                }
             }
         }
 
         $(doc).on('keydown', judgeSpace);
         $(doc).on('keyup', playAnsPause);
+        video.on('click', pausePlay);
 
         // 第四屏：首页文章
         var posterCtrl = $('#poster-show'),
@@ -388,4 +396,4 @@
         });
     });
 
-})(jQuery, document, window);
+})(jQuery, document, location, window);

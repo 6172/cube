@@ -1468,7 +1468,6 @@ body {
     height: 120px;
     position: absolute;
     width: 100%;
-    z-index: 10;
 }
 
 .list-return,
@@ -1504,6 +1503,7 @@ body {
     right: 40px;
     top: 15px;
     width: 90px;
+    z-index: 80;
 }
 
 .list-switch.whole {
@@ -1579,7 +1579,7 @@ body {
 }
 
 .item-titles {
-    color: #333;
+    color: #999;
     position: absolute;
     text-align: center;
     top: 110%;
@@ -1587,12 +1587,12 @@ body {
 }
 
 .item-titles h2 {
-    font-size: 30px;
-    height: 40px;
+    font-size: 32px;
+    height: 45px;
 }
 
 .item-titles h3 {
-    font-size: 20px;
+    font-size: 16px;
     height: 30px;
 }
 
