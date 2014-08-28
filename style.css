@@ -420,6 +420,63 @@ body {
     text-indent: -9999em;
 }
 
+/* Scroll Bar */
+
+.nano {
+  position : relative;
+  width    : 100%;
+  height   : 100%;
+  overflow : hidden;
+}
+.nano > .nano-content {
+  position      : absolute;
+  overflow      : scroll;
+  overflow-x    : hidden;
+  top           : 0;
+  right         : 0;
+  bottom        : 0;
+  left          : 0;
+}
+.nano > .nano-content:focus {
+  outline: thin dotted;
+}
+.nano > .nano-content::-webkit-scrollbar {
+  visibility: hidden;
+}
+.has-scrollbar > .nano-content::-webkit-scrollbar {
+  visibility: visible;
+}
+.nano > .nano-pane {
+  background : rgba(0,0,0,.25);
+  position   : absolute;
+  width      : 10px;
+  right      : 0;
+  top        : 0;
+  bottom     : 0;
+  visibility : hidden\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : .01;
+  -webkit-transition    : .2s;
+  -moz-transition       : .2s;
+  -o-transition         : .2s;
+  transition            : .2s;
+  -moz-border-radius    : 5px;
+  -webkit-border-radius : 5px;
+  border-radius         : 5px;
+}
+.nano > .nano-pane > .nano-slider {
+  background: #444;
+  background: rgba(0,0,0,.5);
+  position              : relative;
+  margin                : 0 1px;
+  -moz-border-radius    : 3px;
+  -webkit-border-radius : 3px;
+  border-radius         : 3px;
+}
+.nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
+  visibility : visible\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : 0.99;
+}
+
 /* -------------------------------------------------------------------------------- */
 /*  3. Navigation
 /* -------------------------------------------------------------------------------- */
@@ -1601,15 +1658,98 @@ body {
 }
 
 .item-detail {
-    background-color: purple;
+    background-color: #fff;
     overflow: hidden;
     z-index: 30;
 }
 
-.item-detail p {
-    font-size: 14px;
-    line-height: 24px;
-    margin: 15px 0;
+.product-figure,
+.product-detail {
+    height: 100%;
+    overflow: hidden;
+    width: 50%;
+}
+
+.product-figure > figure {
+    display: none;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.product-figure > .on {
+    display: block;
+}
+
+.product-detail {
+    position: relative;
+}
+
+.product-detail-nav {
+    background: url(images/list-detail-nav.png) no-repeat -5px 0;
+    height: 23px;
+    left: 10%;
+    padding: 0 0 0 27px;
+    position: absolute;
+    top: 6%;
+}
+
+.product-detail-nav > a {
+    background: url(images/list-detail-nav.png) no-repeat 0 -46px;
+    float: left;
+    height: 23px;
+    width: 23px;
+}
+
+.product-detail-nav > a:hover,
+.product-detail-nav > .active {
+    background-position: 0 -23px;
+}
+
+.product-detail-cont {
+    background-color: #eee;
+    left: 10%;
+    height: 82%;
+    padding: 0 10px 0 0;
+    position: relative;
+    top: 10%;
+    width: 540px;
+}
+
+.product-detail-pages,
+.product-detail-section {
+    background-color: #ccc;
+    height: 100%;
+    width: 100%;
+}
+
+.product-detail-title {
+    border-bottom: 1px solid #ededed;
+    color: #303336;
+    font-size: 46px;
+    height: 22%;
+}
+
+.product-detail-scroll {
+    font-size: 16px;
+    height: 73%;
+    position: relative;
+    top: 5%;
+}
+
+.product-detail-scroll p {
+    line-height: 28px;
+    margin: 20px 0;
+}
+
+
+.product-detail-mask {
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    bottom: 0;
+    height: 10%;
+    position: absolute;
+    width: 540px;
 }
 
 /* -------------------------------------------------------------------------------- */

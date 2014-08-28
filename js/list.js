@@ -174,7 +174,7 @@
 
         if(!fullScreen) {
             listReturn.hide();
-            titles.hide();
+            previews.fadeOut();
             wrap[animFun]({
                 height : '100%',
                 width : '100%'
@@ -191,7 +191,7 @@
                 width : '32%'
             }, 600, function() {
                 swipeCtrl.reinit();
-                titles.fadeIn();
+                previews.fadeIn();
                 items.on('mousedown', markClickStart);
                 items.on('mouseup', switchOnThumb);
                 listSwitch.on('click', switchFullScreen);
@@ -223,5 +223,6 @@
     listReturn.on('click', switchFullScreen);
     items.on('mousedown', markClickStart);
     items.on('mouseup', switchOnThumb);
+    details.on('mousedown', stopBubble);
 
 })(jQuery, Modernizr);
