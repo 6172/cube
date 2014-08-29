@@ -186,12 +186,12 @@
             });
         }else {
             listReturn.show();
+            previews.fadeIn();
             wrap[animFun]({
                 height : '42%',
                 width : '32%'
             }, 600, function() {
                 swipeCtrl.reinit();
-                previews.fadeIn();
                 items.on('mousedown', markClickStart);
                 items.on('mouseup', switchOnThumb);
                 listSwitch.on('click', switchFullScreen);
