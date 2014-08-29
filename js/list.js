@@ -183,6 +183,7 @@
                 items.off('mousedown', markClickStart);
                 items.off('mouseup', switchOnThumb);
                 listSwitch.on('click', switchFullScreen);
+                $('.product-detail-scroll').nanoScroller();
             });
         }else {
             listReturn.show();
@@ -224,5 +225,21 @@
     items.on('mousedown', markClickStart);
     items.on('mouseup', switchOnThumb);
     details.on('mousedown', stopBubble);
+
+    // slider 切换
+    var sliders = $('.product-detail-pages');
+
+    sliders.each(function(index) {
+        var slide = $(this),
+            thumbs = $('#product-figure-' + index).find('figure'),
+            slideCtrl = sliders.bxSlider({
+                controls : false,
+                pagerCustom : '#product-detail-nav-' + index,
+                onSlideBefore : function($slideElement, oldIndex, newIndex) {
+                    // thumbs.removeClass('on').eq(newIndex).addClass('on');
+                    thumbs.hide().eq(newIndex).fadeIn(800);
+                }
+            });
+    });
 
 })(jQuery, Modernizr);

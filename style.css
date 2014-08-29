@@ -1710,16 +1710,16 @@ body {
 .product-detail-cont {
     left: 10%;
     height: 90%;
-    padding: 0 10px 0 0;
     position: relative;
     top: 10%;
-    width: 540px;
+    width: 550px;
 }
 
 .product-detail-pages,
 .product-detail-section {
     font-size: 16px;
     height: 100%;
+    text-align: justify;
     width: 100%;
 }
 
@@ -1756,8 +1756,10 @@ body {
 }
 
 .product-detail-scroll {
+    padding: 0 10px 0 0;
     position: relative;
     top: 5%;
+    width: auto;
 }
 
 .product-detail-scroll p {
