@@ -1,60 +1,13 @@
-(function($, doc, window) {
-    // 悬浮左右移动（按百分比）
-    $.fn.autoHover = function(min, max, speed, widthEle) {
-        var videoFlag = false,
-            videoDist = 0,
-            videoStep = -1,
-            min = (typeof min === 'number') ? min : 0,
-            max = (typeof min === 'number') ? max : 0,
-            self = this,
-            resizeTimer = null,
-            circleTimer = null,
-            wholeWidth = widthEle.width();
-
-        function listStart() {
-            circleTimer = setTimeout(function() {
-                // speed 0.001 ~ 0.01
-                videoDist = Math.max(
-                    Math.min(videoDist + videoStep * speed, max),
-                    min
-                );
-                self.css('left', toPercent(videoDist));
-                listStart();
-            }, 30);
-        }
-
-        function listRun(e) {
-            videoStep = (e.pageX - 60) / wholeWidth < 0.7 ? 1 : -1;
-        }
-
-        function listStop() {
-            clearTimeout(circleTimer);
-        }
-
-        function toPercent(number) {
-            return number * 100 + '%';
-        }
-
-        $(window).on('resize', function() {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() {
-                wholeWidth = widthEle.width();
-            }, 150);
-        });
-
-        this.on('mouseenter', listStart)
-            .on('mousemove', listRun)
-            .on('mouseleave', listStop);
-    };
-
-})(jQuery, document, window);
-
 (function($, doc, loc, window) {
 
     $(doc).ready(function() {
 
         function stopBubble(e) {
             e.stopPropagation();
+        }
+
+        function preventDefault(e) {
+            e.preventDefault();
         }
 
         // 滚屏/导航跳转
@@ -79,7 +32,6 @@
         }
 
         function goToScreen(index) {
-            addNavMark(index);
             pagesCtrl.moveTo(
                 index,
                 800,
@@ -87,9 +39,14 @@
             );
         }
 
-        function hashDetector() {
+        function getHash() {
             var hashMatch = location.hash.match(/^#([A-Za-z]\w+)/),
                 hash = hashMatch == null ? '' : hashMatch[1];
+            return hash;
+        }
+
+        function hashDetector() {
+            var hash = getHash();
             if(navObj.hasOwnProperty(hash)) {
                 goToScreen(navObj[hash]);
             }
@@ -98,11 +55,17 @@
         pagesCtrl = pages.wheel({
             speed : 640,
             arrive : function(index) {
+                doc.activeElement && doc.activeElement.blur();
                 addNavMark(index);
             }
         });
 
         navMenus.on('click', function(e) {
+            var index = $(this).data('index'),
+                hash = getHash();
+            if(index === navObj[hash]) {
+                $(window).trigger('hashchange');
+            }
             e.stopPropagation();
         });
         
@@ -222,22 +185,25 @@
         // 阻止IE系列播放时选中视频按下空格默认暂停
         function judgeSpace(e) {
             var code = e.keyCode,
+                index = pagesCtrl.getPos(),
                 activeTag = doc.activeElement.tagName.toLowerCase();
-            if(code === 32 && (activeTag !== 'input' || activeTag !== 'textarea')) {
+            if(code === 32 && activeTag !== 'input' && activeTag !== 'textarea') {
                 e.preventDefault();
             }
         }
 
-        function playAnsPause(e) {
+        function playAndPause(e) {
             var index = pagesCtrl.getPos();
             if(index === 2) {
                 if(e.keyCode === 32) {
-                    pausePlay();
+                    pausePlay(e);
                 }   
             }
         }
 
-        function pausePlay() {
+        function pausePlay(e) {
+            // 阻止Firefox播放时点击视频默认暂停
+            e.preventDefault();
             if(videoPlaying) {
                 if(player.paused) {
                     player.play();
@@ -248,7 +214,7 @@
         }
 
         $(doc).on('keydown', judgeSpace);
-        $(doc).on('keyup', playAnsPause);
+        $(doc).on('keyup', playAndPause);
         video.on('click', pausePlay);
 
         // 第四屏：首页文章

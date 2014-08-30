@@ -56,7 +56,7 @@
 
 })(document, Modernizr);
 
-// 全局插件
+// 滚动插件和自动滚屏辅助插件
 (function(doc, $, tester) {
 
     // Switch pages width mousewheel(finished)/arrows(finish)/swipeUpDown(TODO)
@@ -104,11 +104,12 @@
 
         function moveTo(whichScreen, speed, callback) {
             var func = animEase,
+                arrive = defaults.arrive,
                 tempScreen = currentScreen,
                 moveDist = -1 * whichScreen + '00%'
             
             if(tempScreen === whichScreen) {
-                callback(tempScreen);
+                console.log('stop');
                 return;
             }
 
@@ -117,7 +118,8 @@
                     var animObj = {};
                     animObj[animProp] = moveDist;
                     wrap[animFunc](animObj, speed, func, function() {
-                        callback(whichScreen);
+                        arrive(whichScreen);
+                        callback && callback(whichScreen);
                     });
                 })(whichScreen);
                 currentScreen = whichScreen;
@@ -140,7 +142,7 @@
 
                 whichScreen = delta < 0 ? whichScreen + 1 : whichScreen - 1;
 
-                moveTo(whichScreen, defaults.speed, defaults.arrive);
+                moveTo(whichScreen, defaults.speed);
             }, 240);
         }
 
@@ -148,10 +150,10 @@
             var code = e.keyCode;
             switch(code) {
                 case 38 :
-                    moveTo(currentScreen - 1, defaults.speed, defaults.arrive);
+                    moveTo(currentScreen - 1, defaults.speed);
                     break;
                 case 40 :
-                    moveTo(currentScreen + 1, defaults.speed, defaults.arrive);
+                    moveTo(currentScreen + 1, defaults.speed);
                     break;
                 default :
                     return ;
@@ -160,9 +162,9 @@
 
         function pageSwipe(e) {
             if(e.type === 'swipeUp') {
-                moveTo(currentScreen + 1, defaults.speed, defaults.arrive);
+                moveTo(currentScreen + 1, defaults.speed);
             }else {
-                moveTo(currentScreen - 1, defaults.speed, defaults.arrive);
+                moveTo(currentScreen - 1, defaults.speed);
             }
         }
 
@@ -222,15 +224,223 @@
 
 })(document, jQuery, Modernizr);
 
+(function($, doc, window) {
+    // 悬浮左右移动（按百分比）
+    $.fn.autoHover = function(min, max, speed, widthEle) {
+        var videoFlag = false,
+            videoDist = 0,
+            videoStep = -1,
+            min = (typeof min === 'number') ? min : 0,
+            max = (typeof min === 'number') ? max : 0,
+            self = this,
+            resizeTimer = null,
+            circleTimer = null,
+            wholeWidth = widthEle.width();
+
+        function listStart() {
+            circleTimer = setTimeout(function() {
+                // speed 0.001 ~ 0.01
+                videoDist = Math.max(
+                    Math.min(videoDist + videoStep * speed, max),
+                    min
+                );
+                self.css('left', toPercent(videoDist));
+                listStart();
+            }, 30);
+        }
+
+        function listRun(e) {
+            videoStep = (e.pageX - 60) / wholeWidth < 0.7 ? 1 : -1;
+        }
+
+        function listStop() {
+            clearTimeout(circleTimer);
+        }
+
+        function toPercent(number) {
+            return number * 100 + '%';
+        }
+
+        $(window).on('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                wholeWidth = widthEle.width();
+            }, 150);
+        });
+
+        this.on('mouseenter', listStart)
+            .on('mousemove', listRun)
+            .on('mouseleave', listStop);
+    };
+
+})(jQuery, document, window);
+
+// 抓取滑动插件
+(function($, doc, window) {
+
+    $.fn.swipe = function() {
+
+        if(this.length !== 1) {
+            return ;
+        }
+
+        var isBind = $.data(this, 'plugin_swipe');
+
+        if(isBind === 'bind') {
+            return ;
+        }else {
+            $.data(this, 'plugin_swipe', 'bind');
+        }
+
+        var moveFun = 'left',
+            userScreen = $(doc),
+            timer = null;
+
+        var container = this,
+            moveEle = container.children('.swipe'),
+            childrenEle = moveEle.find('.swipe-child'),
+            totalPos = childrenEle.length,
+            currPos = 0,
+            startWith,
+            eachWidth,
+            totalWidth,
+            maxLimit = 0,
+            minLimit,
+            isScrolling,
+            start = {},
+            delta = { x : 0, y : 0 };
+
+        function init() {
+            eachWidth = container.width();
+            startWith = 0 - currPos * eachWidth;
+            totalWidth = totalPos * eachWidth;
+            minLimit = eachWidth - totalWidth;
+        }
+
+        function swipeStart(e) {
+            var positionEvt = e;
+            start.x = positionEvt.pageX;
+            start.y = positionEvt.pageY;
+            isScrolling = undefined; // 用于判断是否是在滚动页面
+            container.on('dragstart', stopEvent);
+            userScreen.on('mousemove', swipeMove);
+            userScreen.on('mouseup', swipeEnd);
+        }
+
+        function swipeMove(e) {
+            var positionEvt = e,
+                dist, tempMax;
+
+            delta.x = positionEvt.pageX - start.x;
+            delta.y = positionEvt.pageY - start.y;
+
+            if (typeof isScrolling == 'undefined') {
+                isScrolling = !!( isScrolling || Math.abs(delta.x) < Math.abs(delta.y) );
+            }
+            if(!isScrolling) {
+                stopEvent(e);
+
+                tempMax = 200 - 200 * Math.pow(0.995, Math.abs(delta.x)); // 左右间隔缓动
+                dist = toPercent(
+                    getMoveDist(startWith + delta.x, minLimit - tempMax, maxLimit + tempMax) / eachWidth
+                );
+                // dist = startWith + delta.x;
+                moveEle.css(moveFun, dist);
+            }
+        }
+
+        function swipeEnd(e) {
+            var near, now, animObj = {}, distance = Math.abs(delta.x);
+
+            container.off('dragstart', stopEvent);
+            userScreen.off('mousemove', swipeMove);
+            userScreen.off('mouseup', swipeEnd);
+            
+            if(!isScrolling) {
+                // 先获取结束时的位置，然后判断处于第几部分（根据手指滑动的范围来选择计算方式 - 四舍五入、向上/下取整）
+                now = parseInt(moveEle.css(moveFun));
+
+                if(distance > eachWidth / 2) {
+                    near = Math.round(now / eachWidth);
+                }else if(distance !== 0) {
+                    near = 0 - currPos;
+                }else {
+                    return ;
+                }
+
+                // 计算最终移动到的位置
+                near = Math.min(Math.max(near, 1 - totalPos), 0);
+                currPos = Math.abs(near);
+                startWith = near * eachWidth;
+                animObj[moveFun] = near + '00%';
+                delta = { x : 0, y : 0 };
+                childrenEle.removeClass('on').eq(currPos).addClass('on');
+                moveEle.stop().animate(animObj, 240);
+            }
+        }
+
+        function stopEvent(e) {
+            e.preventDefault();
+        }
+
+        function toPercent(number) {
+            var cutLength = 5;
+            number = number * 100 + '';
+            cutLength += number.indexOf('.');
+            return number.substr(0, cutLength) + '%';
+        }
+
+        function toNumber(percent) {
+            return percent.replace('%', '') / 100;
+        }
+
+        function getMoveDist(computed, min, max) {
+            return Math.max(Math.min(computed, max), min);
+        }
+
+        function moveTo(index, time) {
+            var animObj = {};
+            currPos = index;
+            index = index > 0 ? -index : 0;
+            startWith = index * eachWidth;
+            animObj[moveFun] = index + '00%';
+            childrenEle.removeClass('on').eq(currPos).addClass('on');
+            moveEle.animate(animObj, time);
+        }
+
+        function getPos() {
+            return currPos;
+        }
+
+        init();
+
+        container.on('mousedown', swipeStart);
+        $(window).on('resize', function() {
+            clearTimeout(timer);
+            timer = setTimeout(init, 200);
+        });
+
+        return {
+            to : moveTo,
+            reinit : init,
+            index : getPos
+        };
+    };
+
+})(jQuery, document, window);
+
 // 全局导航动画
 (function($, doc, exports) {
 
     var nav = $('#nav'),
         menu = $('#menu-ctrl'),
         cover = $('#cover-pages'),
-        body = $(doc.body);
+        body = $(doc.body),
+        wechat = $('#wechat'),
+        wechatQR = $('#nav-qr');
     
-    var navOpened = false;
+    var navOpened = false,
+        snsOpened = false;
 
     function openNav() {
         if(!navOpened) {
@@ -256,5 +466,17 @@
     nav.on('click', openNav);
     menu.on('click', closeNav);
     exports.closeNav = closeNav;
+    wechat.on('click', function() {
+        if(snsOpened) {
+            wechatQR.fadeOut();
+        }else {
+            wechatQR.fadeIn();
+        }
+        snsOpened = !snsOpened;
+    });
+    wechatQR.on('click', function() {
+        wechatQR.fadeOut();
+        snsOpened = false;
+    });
 
 })(jQuery, document, window);

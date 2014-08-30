@@ -438,7 +438,7 @@ body {
   left          : 0;
 }
 .nano > .nano-content:focus {
-  outline: thin dotted;
+  outline: none;
 }
 .nano > .nano-content::-webkit-scrollbar {
   visibility: hidden;
@@ -653,7 +653,7 @@ body {
 
 .nav-main > h1 {
     background: url(images/logo.png) no-repeat center center;
-    height: 80px;
+    height: 86px;
     font-size: 0;
     margin: -240px 0 0 0;
     opacity: 0;
@@ -746,6 +746,44 @@ body {
 #nav-menu a:hover,
 #nav-menu .on a {
     color: #111;
+}
+
+.nav-footer {
+    background: url(images/tel.png) no-repeat left bottom;
+    bottom: 5%;
+    height: 80px;
+    position: absolute;
+    right: -30px;
+    text-align: center;
+    width: 200px;
+}
+
+.nav-footer > a {
+    background: url(images/sns.png) no-repeat 0 0;
+    display: inline-block;
+    height: 20px;
+    margin: 0 5px;
+    opacity: .5;
+    text-indent: -9999em;
+    width: 20px;
+}
+
+#wechat {
+    background-position: 0 -19px;
+}
+
+.nav-footer > a:hover {
+    opacity: 1;
+}
+
+#nav-qr {
+    display: none;
+    height: 110px;
+    left: 50%;
+    margin: 0 0 0 -55px;
+    position: absolute;
+    top: -120px;
+    width: 110px;
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -1564,7 +1602,7 @@ body {
 }
 
 .list-switch.whole {
-    background-image: url(images/btn-tothumb.png);
+    background-image: url(images/btn-tothumb-gray.png);
 }
 
 .list-switch:hover {
@@ -1688,6 +1726,7 @@ body {
 
 .product-detail-nav {
     background: url(images/list-detail-nav.png) no-repeat -5px 0;
+    font-size: 14px;
     height: 23px;
     left: 10%;
     padding: 0 0 0 27px;
@@ -1696,15 +1735,18 @@ body {
 }
 
 .product-detail-nav > a {
-    background: url(images/list-detail-nav.png) no-repeat 0 -46px;
+    border-bottom: 1px dashed #fff;
+    color: #999;
     float: left;
-    height: 23px;
-    width: 23px;
+    height: 22px;
+    line-height: 22px;
+    margin: 0 25px 0 0;
 }
 
 .product-detail-nav > a:hover,
 .product-detail-nav > .active {
-    background-position: 0 -23px;
+    border-bottom-color: #ccc;
+    color: #333;
 }
 
 .product-detail-cont {
@@ -1756,10 +1798,13 @@ body {
 }
 
 .product-detail-scroll {
-    padding: 0 10px 0 0;
     position: relative;
     top: 5%;
-    width: auto;
+    width: 100%;
+}
+
+.product-detail-scroll .nano-content {
+    padding: 0 15px 0 0;
 }
 
 .product-detail-scroll p {

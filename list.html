@@ -41,6 +41,11 @@
                         <li class="menu5"><a href="index.html#contact" data-index="4">关于我们</a></li>
                     </ul>
                 </nav>
+                <footer class="nav-footer">
+                    <a href="http://weibo.com/nealzhu" target="_blank">微博</a>
+                    <a href="javascript:viod(0);" id="wechat">微信</a>
+                    <img src="images/qr.png" id="nav-qr" height="110" width="110">
+                </footer>
             </div>
         </nav>
         <!-- header until here -->
@@ -51,6 +56,7 @@
             </nav>
             <div id="wrap" class="list-wrap">
                 <div id="list" class="product-list swipe">
+                    <!-- 以下一个section是一个产品，里面的 id : product-figure- 和 product-detail-nav- 后面要跟上当前产品的下标-->
                     <section class="page list-item swipe-child on">
                         <header class="item-preview">
                             <div class="item-background">
@@ -70,12 +76,12 @@
                             </div>
                             <div class="product-detail f-l">
                                 <nav class="product-detail-nav" id="product-detail-nav-0">
-                                    <a href="javascript:void(0);" data-slide-index="0" class="active"></a>
-                                    <a href="javascript:void(0);" data-slide-index="1"></a>
-                                    <a href="javascript:void(0);" data-slide-index="2"></a>
-                                    <a href="javascript:void(0);" data-slide-index="3"></a>
+                                    <a href="javascript:void(0);" data-slide-index="0" class="active">简介</a>
+                                    <a href="javascript:void(0);" data-slide-index="1">设备参数</a>
+                                    <a href="javascript:void(0);" data-slide-index="2">材料属性</a>
+                                    <a href="javascript:void(0);" data-slide-index="3">行业应用</a>
+                                    <a href="javascript:void(0);" data-slide-index="4">联系订购</a>
                                 </nav>
-                                <!-- tech  material  application -->
                                 <article class="product-detail-cont">
                                     <ul class="product-detail-pages">
                                         <li class="product-detail-section abstract">
@@ -314,7 +320,6 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <!-- <div class="product-detail-mask"></div> -->
                                 </article>
                             </div>
                         </section>
@@ -330,12 +335,268 @@
                             </hgroup>
                         </header>
                         <section class="item-detail">
+                            <div class="product-figure f-l" id="product-figure-1">
+                                <figure class="on"><img class="cover-img" src="images/not-full-1.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-2.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-3.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-4.jpg" alt=""></figure>
+                            </div>
+                            <div class="product-detail f-l">
+                                <nav class="product-detail-nav" id="product-detail-nav-1">
+                                    <a href="javascript:void(0);" data-slide-index="0" class="active">简介</a>
+                                    <a href="javascript:void(0);" data-slide-index="1">设备参数</a>
+                                    <a href="javascript:void(0);" data-slide-index="2">材料属性</a>
+                                    <a href="javascript:void(0);" data-slide-index="3">行业应用</a>
+                                    <a href="javascript:void(0);" data-slide-index="4">联系订购</a>
+                                </nav>
+                                
+                                <article class="product-detail-cont">
+                                    <ul class="product-detail-pages">
+                                        <li class="product-detail-section abstract">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2></h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae delectus assumenda illum, sit sunt in reiciendis nulla ex quam earum non dolorem voluptatem voluptas nemo ut ratione neque eaque quas.</p>
+                                                    <p>Reiciendis fuga, eum fugiat numquam aperiam esse iusto. Commodi quaerat earum repellat numquam quisquam, natus, veniam tempore repudiandae mollitia ab veritatis perferendis nam, vitae delectus quas minus, a aliquid officiis?</p>
+                                                    <p>Totam doloremque tempore esse. Fugiat cupiditate ipsa, nesciunt id magnam unde fuga suscipit debitis sunt adipisci hic maxime obcaecati illum sapiente quisquam dolore impedit. Ipsum est nemo porro, quae deserunt.</p>
+                                                </div>
+                                            </div>
+                                            <footer class="product-detail-comment">
+                                                <figure class="comment-figure f-l">
+                                                    <img src="images/head.png">
+                                                </figure>
+                                                <blockquote class="comment-quotes f-l">“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, explicabo placeat. Commodi culpa provident porro, soluta nostrum quo exercitationem id.”</blockquote>
+                                            </footer>
+                                        </li>
+                                        <li class="product-detail-section tech">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <table cellspacing="0" cellpadding="0" border="0">
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th></th>
+                                                            <td>+-180 avc</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="product-detail-section material">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <table cellspacing="0" cellpadding="0" border="0">
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th></th>
+                                                            <td>+-180 avc</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="product-detail-section application">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <p class="application-intro">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut minima sapiente magni ducimus alias, saepe voluptate dolorem. Odit, nisi repellendus consectetur eos, culpa quidem beatae? Quidem cum iure possimus neque molestiae doloremque doloribus rem optio dolorem nisi nihil mollitia excepturi voluptatum aperiam fuga quibusdam veritatis error esse incidunt, non ipsum!
+                                            </p>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content clearfix">
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    
+                                </article>
+                            </div>
                         </section>
                     </section>
                     <section class="page list-item swipe-child">
                         <header class="item-preview">
                             <div class="item-background">
-                                <img class="cover-img" src="images/full-3.jpg" alt="">
+                                <img class="cover-img" src="images/full-1.jpg" alt="">
                             </div>
                             <hgroup class="item-titles">
                                 <h2>主要的标题叉</h2>
@@ -343,12 +604,268 @@
                             </hgroup>
                         </header>
                         <section class="item-detail">
+                            <div class="product-figure f-l" id="product-figure-2">
+                                <figure class="on"><img class="cover-img" src="images/not-full-1.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-2.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-3.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-4.jpg" alt=""></figure>
+                            </div>
+                            <div class="product-detail f-l">
+                                <nav class="product-detail-nav" id="product-detail-nav-2">
+                                    <a href="javascript:void(0);" data-slide-index="0" class="active">简介</a>
+                                    <a href="javascript:void(0);" data-slide-index="1">设备参数</a>
+                                    <a href="javascript:void(0);" data-slide-index="2">材料属性</a>
+                                    <a href="javascript:void(0);" data-slide-index="3">行业应用</a>
+                                    <a href="javascript:void(0);" data-slide-index="4">联系订购</a>
+                                </nav>
+                                
+                                <article class="product-detail-cont">
+                                    <ul class="product-detail-pages">
+                                        <li class="product-detail-section abstract">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2></h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae delectus assumenda illum, sit sunt in reiciendis nulla ex quam earum non dolorem voluptatem voluptas nemo ut ratione neque eaque quas.</p>
+                                                    <p>Reiciendis fuga, eum fugiat numquam aperiam esse iusto. Commodi quaerat earum repellat numquam quisquam, natus, veniam tempore repudiandae mollitia ab veritatis perferendis nam, vitae delectus quas minus, a aliquid officiis?</p>
+                                                    <p>Totam doloremque tempore esse. Fugiat cupiditate ipsa, nesciunt id magnam unde fuga suscipit debitis sunt adipisci hic maxime obcaecati illum sapiente quisquam dolore impedit. Ipsum est nemo porro, quae deserunt.</p>
+                                                </div>
+                                            </div>
+                                            <footer class="product-detail-comment">
+                                                <figure class="comment-figure f-l">
+                                                    <img src="images/head.png">
+                                                </figure>
+                                                <blockquote class="comment-quotes f-l">“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, explicabo placeat. Commodi culpa provident porro, soluta nostrum quo exercitationem id.”</blockquote>
+                                            </footer>
+                                        </li>
+                                        <li class="product-detail-section tech">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <table cellspacing="0" cellpadding="0" border="0">
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th></th>
+                                                            <td>+-180 avc</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="product-detail-section material">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <table cellspacing="0" cellpadding="0" border="0">
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th></th>
+                                                            <td>+-180 avc</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="product-detail-section application">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <p class="application-intro">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut minima sapiente magni ducimus alias, saepe voluptate dolorem. Odit, nisi repellendus consectetur eos, culpa quidem beatae? Quidem cum iure possimus neque molestiae doloremque doloribus rem optio dolorem nisi nihil mollitia excepturi voluptatum aperiam fuga quibusdam veritatis error esse incidunt, non ipsum!
+                                            </p>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content clearfix">
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    
+                                </article>
+                            </div>
                         </section>
                     </section>
                     <section class="page list-item swipe-child">
                         <header class="item-preview">
                             <div class="item-background">
-                                <img class="cover-img" src="images/full-3.jpg" alt="">
+                                <img class="cover-img" src="images/full-1.jpg" alt="">
                             </div>
                             <hgroup class="item-titles">
                                 <h2>主要的标题叉</h2>
@@ -356,12 +873,268 @@
                             </hgroup>
                         </header>
                         <section class="item-detail">
+                            <div class="product-figure f-l" id="product-figure-3">
+                                <figure class="on"><img class="cover-img" src="images/not-full-1.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-2.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-3.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-4.jpg" alt=""></figure>
+                            </div>
+                            <div class="product-detail f-l">
+                                <nav class="product-detail-nav" id="product-detail-nav-3">
+                                    <a href="javascript:void(0);" data-slide-index="0" class="active">简介</a>
+                                    <a href="javascript:void(0);" data-slide-index="1">设备参数</a>
+                                    <a href="javascript:void(0);" data-slide-index="2">材料属性</a>
+                                    <a href="javascript:void(0);" data-slide-index="3">行业应用</a>
+                                    <a href="javascript:void(0);" data-slide-index="4">联系订购</a>
+                                </nav>
+                                
+                                <article class="product-detail-cont">
+                                    <ul class="product-detail-pages">
+                                        <li class="product-detail-section abstract">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2></h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae delectus assumenda illum, sit sunt in reiciendis nulla ex quam earum non dolorem voluptatem voluptas nemo ut ratione neque eaque quas.</p>
+                                                    <p>Reiciendis fuga, eum fugiat numquam aperiam esse iusto. Commodi quaerat earum repellat numquam quisquam, natus, veniam tempore repudiandae mollitia ab veritatis perferendis nam, vitae delectus quas minus, a aliquid officiis?</p>
+                                                    <p>Totam doloremque tempore esse. Fugiat cupiditate ipsa, nesciunt id magnam unde fuga suscipit debitis sunt adipisci hic maxime obcaecati illum sapiente quisquam dolore impedit. Ipsum est nemo porro, quae deserunt.</p>
+                                                </div>
+                                            </div>
+                                            <footer class="product-detail-comment">
+                                                <figure class="comment-figure f-l">
+                                                    <img src="images/head.png">
+                                                </figure>
+                                                <blockquote class="comment-quotes f-l">“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, explicabo placeat. Commodi culpa provident porro, soluta nostrum quo exercitationem id.”</blockquote>
+                                            </footer>
+                                        </li>
+                                        <li class="product-detail-section tech">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <table cellspacing="0" cellpadding="0" border="0">
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th></th>
+                                                            <td>+-180 avc</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="product-detail-section material">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <table cellspacing="0" cellpadding="0" border="0">
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th></th>
+                                                            <td>+-180 avc</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="product-detail-section application">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <p class="application-intro">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut minima sapiente magni ducimus alias, saepe voluptate dolorem. Odit, nisi repellendus consectetur eos, culpa quidem beatae? Quidem cum iure possimus neque molestiae doloremque doloribus rem optio dolorem nisi nihil mollitia excepturi voluptatum aperiam fuga quibusdam veritatis error esse incidunt, non ipsum!
+                                            </p>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content clearfix">
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    
+                                </article>
+                            </div>
                         </section>
                     </section>
                     <section class="page list-item swipe-child">
                         <header class="item-preview">
                             <div class="item-background">
-                                <img class="cover-img" src="images/full-2.jpg" alt="">
+                                <img class="cover-img" src="images/full-1.jpg" alt="">
                             </div>
                             <hgroup class="item-titles">
                                 <h2>主要的标题叉</h2>
@@ -369,12 +1142,268 @@
                             </hgroup>
                         </header>
                         <section class="item-detail">
+                            <div class="product-figure f-l" id="product-figure-4">
+                                <figure class="on"><img class="cover-img" src="images/not-full-1.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-2.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-3.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-4.jpg" alt=""></figure>
+                            </div>
+                            <div class="product-detail f-l">
+                                <nav class="product-detail-nav" id="product-detail-nav-4">
+                                    <a href="javascript:void(0);" data-slide-index="0" class="active">简介</a>
+                                    <a href="javascript:void(0);" data-slide-index="1">设备参数</a>
+                                    <a href="javascript:void(0);" data-slide-index="2">材料属性</a>
+                                    <a href="javascript:void(0);" data-slide-index="3">行业应用</a>
+                                    <a href="javascript:void(0);" data-slide-index="4">联系订购</a>
+                                </nav>
+                                
+                                <article class="product-detail-cont">
+                                    <ul class="product-detail-pages">
+                                        <li class="product-detail-section abstract">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2></h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae delectus assumenda illum, sit sunt in reiciendis nulla ex quam earum non dolorem voluptatem voluptas nemo ut ratione neque eaque quas.</p>
+                                                    <p>Reiciendis fuga, eum fugiat numquam aperiam esse iusto. Commodi quaerat earum repellat numquam quisquam, natus, veniam tempore repudiandae mollitia ab veritatis perferendis nam, vitae delectus quas minus, a aliquid officiis?</p>
+                                                    <p>Totam doloremque tempore esse. Fugiat cupiditate ipsa, nesciunt id magnam unde fuga suscipit debitis sunt adipisci hic maxime obcaecati illum sapiente quisquam dolore impedit. Ipsum est nemo porro, quae deserunt.</p>
+                                                </div>
+                                            </div>
+                                            <footer class="product-detail-comment">
+                                                <figure class="comment-figure f-l">
+                                                    <img src="images/head.png">
+                                                </figure>
+                                                <blockquote class="comment-quotes f-l">“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, explicabo placeat. Commodi culpa provident porro, soluta nostrum quo exercitationem id.”</blockquote>
+                                            </footer>
+                                        </li>
+                                        <li class="product-detail-section tech">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <table cellspacing="0" cellpadding="0" border="0">
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th></th>
+                                                            <td>+-180 avc</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="product-detail-section material">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <table cellspacing="0" cellpadding="0" border="0">
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th></th>
+                                                            <td>+-180 avc</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="product-detail-section application">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <p class="application-intro">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut minima sapiente magni ducimus alias, saepe voluptate dolorem. Odit, nisi repellendus consectetur eos, culpa quidem beatae? Quidem cum iure possimus neque molestiae doloremque doloribus rem optio dolorem nisi nihil mollitia excepturi voluptatum aperiam fuga quibusdam veritatis error esse incidunt, non ipsum!
+                                            </p>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content clearfix">
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    
+                                </article>
+                            </div>
                         </section>
                     </section>
                     <section class="page list-item swipe-child">
                         <header class="item-preview">
                             <div class="item-background">
-                                <img class="cover-img" src="images/full-2.jpg" alt="">
+                                <img class="cover-img" src="images/full-1.jpg" alt="">
                             </div>
                             <hgroup class="item-titles">
                                 <h2>主要的标题叉</h2>
@@ -382,6 +1411,262 @@
                             </hgroup>
                         </header>
                         <section class="item-detail">
+                            <div class="product-figure f-l" id="product-figure-5">
+                                <figure class="on"><img class="cover-img" src="images/not-full-1.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-2.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-3.jpg" alt=""></figure>
+                                <figure><img class="cover-img" src="images/not-full-4.jpg" alt=""></figure>
+                            </div>
+                            <div class="product-detail f-l">
+                                <nav class="product-detail-nav" id="product-detail-nav-5">
+                                    <a href="javascript:void(0);" data-slide-index="0" class="active">简介</a>
+                                    <a href="javascript:void(0);" data-slide-index="1">设备参数</a>
+                                    <a href="javascript:void(0);" data-slide-index="2">材料属性</a>
+                                    <a href="javascript:void(0);" data-slide-index="3">行业应用</a>
+                                    <a href="javascript:void(0);" data-slide-index="4">联系订购</a>
+                                </nav>
+                                
+                                <article class="product-detail-cont">
+                                    <ul class="product-detail-pages">
+                                        <li class="product-detail-section abstract">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2></h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae delectus assumenda illum, sit sunt in reiciendis nulla ex quam earum non dolorem voluptatem voluptas nemo ut ratione neque eaque quas.</p>
+                                                    <p>Reiciendis fuga, eum fugiat numquam aperiam esse iusto. Commodi quaerat earum repellat numquam quisquam, natus, veniam tempore repudiandae mollitia ab veritatis perferendis nam, vitae delectus quas minus, a aliquid officiis?</p>
+                                                    <p>Totam doloremque tempore esse. Fugiat cupiditate ipsa, nesciunt id magnam unde fuga suscipit debitis sunt adipisci hic maxime obcaecati illum sapiente quisquam dolore impedit. Ipsum est nemo porro, quae deserunt.</p>
+                                                </div>
+                                            </div>
+                                            <footer class="product-detail-comment">
+                                                <figure class="comment-figure f-l">
+                                                    <img src="images/head.png">
+                                                </figure>
+                                                <blockquote class="comment-quotes f-l">“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, explicabo placeat. Commodi culpa provident porro, soluta nostrum quo exercitationem id.”</blockquote>
+                                            </footer>
+                                        </li>
+                                        <li class="product-detail-section tech">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <table cellspacing="0" cellpadding="0" border="0">
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th></th>
+                                                            <td>+-180 avc</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="product-detail-section material">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content">
+                                                    <table cellspacing="0" cellpadding="0" border="0">
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th></th>
+                                                            <td>+-180 avc</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lorem ipsum dolor:</th>
+                                                            <td>Lorem ipsum dolor sit amet.</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="product-detail-section application">
+                                            <header class="product-detail-title">
+                                                <hgroup>
+                                                    <h1>Lorem ipsum dolor sit amet.</h1>
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, at.</h2>
+                                                </hgroup>
+                                            </header>
+                                            <p class="application-intro">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut minima sapiente magni ducimus alias, saepe voluptate dolorem. Odit, nisi repellendus consectetur eos, culpa quidem beatae? Quidem cum iure possimus neque molestiae doloremque doloribus rem optio dolorem nisi nihil mollitia excepturi voluptatum aperiam fuga quibusdam veritatis error esse incidunt, non ipsum!
+                                            </p>
+                                            <div class="product-detail-scroll nano">
+                                                <div class="nano-content clearfix">
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                    <div class="application-item f-l">
+                                                        <figure>
+                                                            <img src="" alt="">
+                                                        </figure>
+                                                        <h2>Lorem ipsum dolor sit.</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vero asperiores velit repudiandae dolorem illum molestias, consequatur ratione illo obcaecati debitis nulla, deleniti. Nobis illo molestias eveniet eum accusamus provident, repellendus natus, quod aliquid ut hic, minima perspiciatis aperiam laborum.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    
+                                </article>
+                            </div>
                         </section>
                     </section>
                 </div>
