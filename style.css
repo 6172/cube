@@ -1543,18 +1543,26 @@ body {
 }
 
 .tip-arrow-down {
+    background: url(images/tip-arrow-down.png) no-repeat center top;
+    bottom: 20px;
+    height: 108px;
+    left: 50%;
+    margin: 0 0 0 -28px;
+    position: absolute;
+    width: 56px;
+    z-index: 888;
+}
+
+.tip-arrow-down > img {
     -webkit-animation: arrow-anim 1.5s ease 0s infinite;
     -moz-animation: arrow-anim 1.5s ease 0s infinite;
     -ms-animation: arrow-anim 1.5s ease 0s infinite;
     animation: arrow-anim 1.5s ease 0s infinite;
-    background: url(images/tip-arrow-down.png) no-repeat center center;
-    bottom: 24px;
-    height: 40px;
-    left: 50%;
-    margin: 0 auto;
+    bottom: 0;
+    height: 15px;
+    left: 0;
     position: absolute;
-    width: 40px;
-    z-index: 888;
+    width: 56px;
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -1562,8 +1570,7 @@ body {
 /* -------------------------------------------------------------------------------- */
 
 .list-pages {
-    background: #424242 url(images/bg-list.jpg) no-repeat 0 0;
-    background-size: cover;
+    background-color: #424242;
 }
 
 #list-nav {
@@ -1742,6 +1749,7 @@ body {
 }
 
 .product-detail-nav > a {
+    background-color: none;
     border-bottom: 1px dashed #fff;
     color: #999;
     float: left;
@@ -2044,6 +2052,13 @@ body {
 /* -------------------------------------------------------------------------------- */
 
 /* Contact */
+
+@media screen and (min-height: 1px) {
+    .list-pages {
+        background: #424242 url(images/bg-list.jpg) no-repeat 0 0;
+        background-size: cover;
+    }
+}
 
 @media screen and (max-height: 805px) {
     .contact header {
