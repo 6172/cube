@@ -255,6 +255,7 @@
             inputs = form.find('.form-input'),
             submit = $('#submit'),
             onsubmit = false,
+            ajaxURL = form.data('ajax'),
             ajaxIO,
             focusAct = function() {
                 $(this).siblings().hide();
@@ -274,10 +275,13 @@
                 return true;
             };
 
+        inputs.val('');
+
         form.on('focus', 'input', focusAct)
             .on('focus', 'textarea', focusAct)
             .on('blur', 'input', blurAct)
-            .on('blur', 'textarea', blurAct);
+            .on('blur', 'textarea', blurAct)
+            .on('submit', preventDefault);
         
         submit.on('click', function() {
             var flag = simpleValidata();
@@ -299,9 +303,8 @@
                     }, 7000);
                 ajaxIO = $.ajax({
                     // url : 'http://baidu.com',
-                    url : 'http://127.0.0.1/demos/machine/',
+                    url : ajaxURL,
                     type : 'POST',
-                    dataType : 'HTML',
                     data : form.serialize(),
                     timeout : 2000
                 });

@@ -14,15 +14,7 @@
     3.  Navigation
     4.  Index Page
     5.  Product List Page
-
     X.  Media Querys
-
-    Single post
-    Post Content
-    Comments
-    Pagination
-    Page & Page Templates
-    Footer
 
 ----------------------------------------------------------------------------------- */
 
@@ -623,11 +615,9 @@ body {
     -moz-animation: random 3s linear 0s infinite;
     -ms-animation: random 3s linear 0s infinite;
     animation: random 3s linear 0s infinite;
-    color: #666;
+    background: url(images/tech.png) no-repeat center center;
     bottom: 10%;
     height: 30px;
-    line-height: 30px;
-    text-align: center;
     left: 15px;
     width: 30px;
 }
@@ -1425,6 +1415,7 @@ body {
 }
 
 #contact-from > fieldset {
+    font-size: 0;
     height: 225px;
     width: 455px;
 }
@@ -1441,9 +1432,19 @@ body {
     background-color: #fff;
     border-radius: 3px;
     color: #222;
+    font-size: 16px;
     margin: 0 0 25px;
     padding: 10px 30px;
     position: relative;
+}
+
+#contact-from .half {
+    display: inline-block;
+    width: 160px;
+}
+
+#contact-from .half + .half {
+    margin: 0 0 0 15px;
 }
 
 .contact-input > label {
@@ -1451,6 +1452,10 @@ body {
     line-height: 30px;
     padding: 10px 30px;
     width: 395px;
+}
+
+.half > label {
+    width: 180px;
 }
 
 .contact-input > input {
@@ -1466,6 +1471,7 @@ body {
 .contact-textarea {
     background-color: #fff;
     border-radius: 3px;
+    font-size: 16px;
     height: 180px;
     margin: 0 0 25px;
     padding: 10px 30px;
@@ -1520,6 +1526,7 @@ body {
     left: 0;
     position: absolute;
     text-align: center;
+    text-transform: uppercase;
     width: 100%;
 }
 
@@ -1918,6 +1925,118 @@ body {
     height: 10%;
     position: absolute;
     width: 540px;
+}
+
+.order {}
+
+.order > .product-detail-scroll {
+    height: 75%;
+}
+
+.order-form {}
+
+.order-form > h3 {
+    font-size: 16px;
+    color: #666;
+    margin: 0 0 30px;
+}
+
+.order-form > fieldset {
+    font-size: 0;
+}
+
+.order-form label {
+    color: #999;
+    cursor: text;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 30;
+}
+
+.order-input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #222;
+    font-size: 16px;
+    margin: 0 0 25px;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.order-form .half {
+    display: inline-block;
+    width: 190px;
+}
+
+.order-form .half + .half {
+    margin: 0 0 0 31px;
+}
+
+.order-input > label {
+    height: 30px;
+    line-height: 30px;
+    padding: 10px 30px;
+    width: 473px;
+}
+
+.half > label {
+    width: 190px;
+}
+
+.order-input > input {
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.order-textarea {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    height: 180px;
+    margin: 0 0 25px;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.order-textarea > label {
+    height: 180px;
+    padding: 10px 30px;
+    width: 473px;
+}
+
+.order-textarea > textarea {
+    border: none;
+    font-size: 14px;
+    margin: 0;
+    max-height: 180px;
+    min-height: 180px;
+    max-width: 473px;
+    min-width: 473px;
+    padding: 0;
+    height: 100%;
+    line-height: 30px;
+    width: 100%;
+}
+
+.order-form > .submit {
+    border: 1px solid #999;
+    border-radius: 27px;
+    color: #333;
+    height: 50px;
+    line-height: 50px;
+    margin: 20px 0;
+    width: 170px;
+}
+
+.order-form > .submit:hover {
+    background-color: #999;
+    color: #fff;
 }
 
 /* -------------------------------------------------------------------------------- */
