@@ -81,7 +81,7 @@
     }
 
     listSwitch.on('click', switchFullScreen);
-    listReturn.on('click', switchFullScreen);
+    // listReturn.on('click', switchFullScreen);
     items.on('mousedown', markClickStart);
     items.on('mouseup', switchOnThumb);
     details.on('mousedown', stopBubble);
