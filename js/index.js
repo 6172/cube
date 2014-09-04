@@ -78,7 +78,9 @@
 
         sliderMain = intro.bxSlider({
             controls : false,
-            startSlide : 0
+            startSlide : 0,
+            auto : true,
+            pause : 5000
         });
         // sliderMain.startAuto();
 
