@@ -1,0 +1,485 @@
+.list-page {
+    background-color: #424242;
+    color: #222;
+}
+
+#list-nav {
+    height: 120px;
+    position: absolute;
+    width: 100%;
+}
+
+.list-return,
+.list-switch {
+    position: absolute;
+}
+
+.list-return {
+    border: 2px solid #9d9ca3;
+    border-radius: 6px;
+    color: #9d9ca3;
+    height: 30px;
+    line-height: 30px;
+    left: 40px;
+    text-align: center;
+    top: 45px;
+    width: 100px;
+}
+
+.list-return:hover {
+    border-color: #fff;
+    background-color: #fff;
+    color: #111;
+}
+
+.list-switch {
+    background: transparent url(images/btn-tofull.png) no-repeat center center;
+    border: none;
+    cursor: pointer;
+    font-size: 0;
+    height: 90px;
+    opacity: .8;
+    right: 40px;
+    top: 15px;
+    width: 90px;
+    z-index: 80;
+}
+
+.list-switch.whole {
+    background-image: url(images/btn-tothumb-gray.png);
+}
+
+.list-switch:hover {
+    opacity: 1;
+}
+
+.list-wrap {
+    bottom: 0;
+    height: 42%;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 32%;
+}
+
+.item-preview,
+.item-detail,
+.list-item-wrap {
+    height: 100%;
+}
+
+.product-list {
+    font-size: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.list-item {
+    display: inline-block;
+    height: 100%;
+    overflow: visible;
+    position: relative;
+    white-space: normal;
+    width: 100%;
+}
+
+.item-preview,
+.item-detail {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.item-preview {
+    cursor: pointer;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    z-index: 50;
+}
+
+.item-preview:active {
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+}
+
+.item-background {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.item-titles {
+    color: #999;
+    position: absolute;
+    text-align: center;
+    top: 110%;
+    width: 100%;
+}
+
+.item-titles h2 {
+    font-size: 32px;
+    height: 45px;
+}
+
+.item-titles h3 {
+    font-size: 16px;
+    height: 30px;
+}
+
+.on .item-titles {
+    color: #fff;
+}
+
+.item-detail {
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 30;
+}
+
+.product-figure,
+.product-detail {
+    height: 100%;
+    overflow: hidden;
+    width: 50%;
+}
+
+.product-figure > figure {
+    display: none;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.product-figure > .on {
+    display: block;
+}
+
+.product-detail {
+    position: relative;
+}
+
+.product-detail-nav {
+    background: url(images/list-detail-nav.png) no-repeat -5px 0;
+    font-size: 14px;
+    height: 23px;
+    left: 10%;
+    padding: 0 0 0 27px;
+    position: absolute;
+    top: 6%;
+}
+
+.product-detail-nav > a {
+    background-color: none;
+    border-bottom: 1px dashed #fff;
+    color: #999;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin: 0 25px 0 0;
+}
+
+.product-detail-nav > a:hover,
+.product-detail-nav > .active {
+    border-bottom-color: #ccc;
+    color: #333;
+}
+
+.product-detail-cont {
+    left: 10%;
+    height: 90%;
+    position: relative;
+    top: 10%;
+    width: 550px;
+}
+
+.product-detail-pages,
+.product-detail-section {
+    font-size: 16px;
+    height: 100%;
+    text-align: justify;
+    width: 100%;
+}
+
+.product-detail-title {
+    border-bottom: 1px solid #ededed;
+    color: #303336;
+    height: 20%;
+    overflow: hidden;
+}
+
+.product-detail-title > hgroup {
+    height: 80px;
+    margin: -40px 0 0;
+    position: relative;
+    top: 50%;
+}
+
+.product-detail-title h1,
+.product-detail-title h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.product-detail-title h1 {
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.product-detail-title h2 {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.product-detail-scroll {
+    position: relative;
+    top: 5%;
+    width: 100%;
+}
+
+.product-detail-scroll .nano-content {
+    padding: 0 15px 0 0;
+}
+
+.product-detail-scroll p {
+    line-height: 28px;
+    margin: 0  0 20px;
+}
+
+.product-detail-scroll table {
+    margin: 0 0 28px;
+    width: 100%;
+}
+
+.product-detail-scroll table tr {
+    height: 40px;
+}
+
+.product-detail-scroll table th {
+    color: #696f6f;
+    width: 180px;
+}
+
+.product-detail-scroll table td {
+    color: #1b1f23;
+}
+
+.abstract {}
+
+.abstract > .product-detail-scroll {
+    height: 47%;
+}
+
+.product-detail-comment {
+    border-top: 1px solid #ededed;
+    height: 18%;
+    position: relative;
+    top: 8%;
+}
+
+.comment-figure {
+    height: 65px;
+    margin: -33px 0 0;
+    position: relative;
+    top: 50%;
+    width: 65px;
+}
+
+.comment-quotes {
+    color: #696f6f;
+    height: 75px;
+    line-height: 25px;
+    margin: -38px 0 0 10px;
+    position: relative;
+    top: 50%;
+    width: 465px;
+}
+
+.tech {}
+.material {}
+
+.tech > .product-detail-scroll,
+.material > .product-detail-scroll {
+    height: 75%;
+}
+
+.application {}
+
+.application-intro {
+    line-height: 28px;
+    height: 25%;
+    overflow: hidden;
+    position: relative;
+    top: 5%;
+}
+
+.application .product-detail-scroll {
+    height: 45%;
+    top: 10%;
+}
+
+.application-item {
+    margin: 0 60px 20px 0;
+    width: 180px;
+}
+
+.application-item > figure {
+    background-color: #eee;
+    height: 130px;
+    margin: 0 0 20px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.application-item > h2 {
+    color: #303336;
+    font-size: 20px;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.application-item > p {
+    color: #696f6f;
+}
+
+.product-detail-mask {
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    bottom: 0;
+    height: 10%;
+    position: absolute;
+    width: 540px;
+}
+
+.order {}
+
+.order > .product-detail-scroll {
+    height: 75%;
+}
+
+.order-form {}
+
+.order-form > h3 {
+    font-size: 16px;
+    color: #666;
+    margin: 0 0 30px;
+}
+
+.order-form > fieldset {
+    font-size: 0;
+}
+
+.order-form label {
+    color: #999;
+    cursor: text;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 30;
+}
+
+.order-input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #222;
+    font-size: 16px;
+    margin: 0 0 25px;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.order-form .half {
+    display: inline-block;
+    width: 190px;
+}
+
+.order-form .half + .half {
+    margin: 0 0 0 31px;
+}
+
+.order-input > label {
+    height: 30px;
+    line-height: 30px;
+    padding: 10px 30px;
+    width: 473px;
+}
+
+.half > label {
+    width: 190px;
+}
+
+.order-input > input {
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.order-textarea {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    height: 180px;
+    margin: 0 0 25px;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.order-textarea > label {
+    height: 180px;
+    padding: 10px 30px;
+    width: 473px;
+}
+
+.order-textarea > textarea {
+    border: none;
+    font-size: 14px;
+    margin: 0;
+    max-height: 180px;
+    min-height: 180px;
+    max-width: 473px;
+    min-width: 473px;
+    padding: 0;
+    height: 100%;
+    line-height: 30px;
+    width: 100%;
+}
+
+.order-form > .submit {
+    border: 1px solid #999;
+    border-radius: 27px;
+    color: #333;
+    height: 50px;
+    line-height: 50px;
+    margin: 20px 0;
+    width: 170px;
+}
+
+.order-form > .submit:hover {
+    background-color: #999;
+    color: #fff;
+}
+
+@media screen and (min-height: 1px) {
+    .list-page {
+        background: #424242 url(images/bg-list.jpg) no-repeat 0 0;
+        background-size: cover;
+    }
+}
