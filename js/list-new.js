@@ -14,10 +14,10 @@
         itemSelector: '.list-product-item'
     });
 
-    // 滚动条
-    wall.nanoScroller();
+    // 滚动条和居中
+    setWallVerticalCenter();
     msnry.on('layoutComplete', function() {
-        wall.nanoScroller();
+        setWallVerticalCenter();
     });
 
     // 鼠标进入特效
@@ -124,6 +124,8 @@
         }else {
             cont.css('top', 0);
         }
+
+        wall.nanoScroller();
     }
 
     filterNav.on('click', 'a', function() {
@@ -150,7 +152,6 @@
         $(selector).show();
 
         msnry.layout();
-        wall.nanoScroller();
         setWallVerticalCenter();
     });
 
