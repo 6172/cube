@@ -10,6 +10,7 @@
     msnry = new Masonry(cont[0], {
         columnWidth: 300,
         gutter : 40,
+        isFitWidth : true,
         itemSelector: '.list-product-item'
     });
 
@@ -111,17 +112,35 @@
 
     // 产品过滤，目前只根据品牌和工艺两项过滤，不跳转页面
     var allProducts = $('.list-product-item'),
-        processDesc = $('#list-process-desc');
+        processDesc = $('#list-process-desc'),
+        resizeTimer;
+
+    function setWallVerticalCenter() {
+        var contHeight = cont.height(),
+            parentHeight = cont.parent().height();
+
+        if(contHeight < parentHeight) {
+            cont.css('top', (parentHeight - contHeight) / 2 + 'px');
+        }else {
+            cont.css('top', 0);
+        }
+    }
+
     filterNav.on('click', 'a', function() {
         var self = $(this),
             brand = self.data('brand'),
             process = self.data('process'),
             selector = '.list-product-item';
+        
+        processDesc.hide().children().hide();
+        
         if(brand !== undefined) {
             selector = selector + '[data-brand=' + brand + ']';
         }
         if(process !== undefined) {
             selector = selector + '[data-process=' + process + ']';
+            processDesc.find('[data-process=' + process + ']').show();
+            processDesc.fadeIn();
         }
 
         filterNav.find('a').removeClass('on');
@@ -132,6 +151,14 @@
 
         msnry.layout();
         wall.nanoScroller();
+        setWallVerticalCenter();
+    });
+
+    $(window).on('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            setWallVerticalCenter();
+        }, 100);
     });
 
 })(jQuery, Modernizr);
