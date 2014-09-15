@@ -23,7 +23,7 @@
         });
 
     // 自定滚动条
-    $('.product-detail-scroll').nanoScroller();
+    $('.product-detail-scroll').nanoScroller({iOSNativeScrolling:true});
 
     // 表单提交
     var forms = $('.order-form');

@@ -15,6 +15,7 @@
     });
 
     // 滚动条和居中
+    wall.nanoScroller({iOSNativeScrolling:true});
     setWallVerticalCenter();
     msnry.on('layoutComplete', function() {
         setWallVerticalCenter();
