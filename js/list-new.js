@@ -137,10 +137,10 @@
         
         processDesc.hide().children().hide();
         
-        if(brand !== undefined) {
+        if(brand !== undefined && brand !== '') {
             selector = selector + '[data-brand=' + brand + ']';
         }
-        if(process !== undefined) {
+        if(process !== undefined && process !== '') {
             selector = selector + '[data-process=' + process + ']';
             processDesc.find('[data-process=' + process + ']').show();
             processDesc.fadeIn();
