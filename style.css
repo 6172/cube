@@ -1594,7 +1594,7 @@ body {
     border-radius: 15px;
     color: #999;
     font-size: 13px;
-    left: 10%;
+    left: 90px;
     height: 28px;
     line-height: 28px;
     position: absolute;
@@ -1610,7 +1610,7 @@ body {
 
 .list-filter-nav {
     left: 50%;
-    margin: -230px 0 0 -95px;
+    margin: -250px 0 0 -95px;
     padding: 0 20px;
     position: absolute;
     top: 50%;
@@ -1658,10 +1658,10 @@ body {
 }
 
 .list-process-desc {
-    bottom: 20px;
-    left: 45px;
+    bottom: 10px;
+    left: 26px;
     position: absolute;
-    width: 190px;
+    width: 228px;
 }
 
 .list-process-desc > div {
@@ -1669,7 +1669,7 @@ body {
 }
 
 .list-process-desc h2 {
-    background: url(images/list-quote-start.png) no-repeat left top;
+    background: url(images/list-quote-start.png) no-repeat 0 10px;
     font-size: 18px;
     padding: 30px 0 0;
     text-align: right;
@@ -2134,7 +2134,13 @@ body {
 
 /* Contact */
 
-@media screen and (min-height: 805px) {
+@media screen and (min-height: 740px) {
+    .list-filter-nav {
+        margin: -230px 0 0 -95px;
+    }
+}
+
+@media screen and (min-height: 820px) {
     .list-process-desc {
         bottom: 30px;
     }

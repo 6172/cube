@@ -1,5 +1,6 @@
 (function($, tester) {
 
+    // 基本功能
     var wall = $('#list-products-wall'),
         cont = $('#list-produsts-cont'),
         products = $('.list-product-item'),
@@ -161,6 +162,26 @@
         resizeTimer = setTimeout(function() {
             setWallVerticalCenter();
         }, 100);
+    });
+
+    // 工艺简介文字剪切
+    function ellipsis(str, max) {
+        var len = str.length, list = str.split(''), i, t = 0;
+        for (i=0; i<len; i++){
+            t++;
+            if (/[^\x00-\x80]/g.test(list[i])){
+                t++;
+            }
+            if (t>=max){
+                return str.slice(0, i)+'..';
+            }
+        }
+        return str;
+    }
+
+    processDesc.find('p').each(function() {
+        var text = this.innerHTML;
+        this.innerHTML = ellipsis(text, 360);
     });
 
 })(jQuery, Modernizr);
