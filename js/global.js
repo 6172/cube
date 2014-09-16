@@ -28,7 +28,7 @@
 
         doc.addEventListener('touchmove', function(e) {
             firstTouch = e.touches[0];
-            if(firstTouch.clientX - touch.startX > 3) {
+            if(firstTouch.clientY - touch.startY > 20) {
                 e.preventDefault();
             }
         }, false);
