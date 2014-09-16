@@ -1,4 +1,4 @@
-(function($, doc, loc, window) {
+(function($, doc, loc, tester, window) {
 
     $(doc).ready(function() {
 
@@ -231,6 +231,7 @@
             e.preventDefault();
             posterCont
                 .on('mousewheel', stopBubble)
+                .on('touchmove', stopBubble)
                 .on('touchend', stopBubble)
                 .find('article')
                 .hide()
@@ -244,13 +245,16 @@
             posterCtrl.fadeIn();
             posterCont
                 .off('mousewheel', stopBubble)
+                .off('touchmove', stopBubble)
                 .off('touchend', stopBubble);
         });
 
-        posterCtrl.autoHover(
-            (3 - posterCtrl.children().length) * 0.25,
-            0, 0.003, pages
-        );
+        if(!tester.touch) {
+            posterCtrl.autoHover(
+                (3 - posterCtrl.children().length) * 0.25,
+                0, 0.003, pages
+            );
+        }
 
         // 第五屏：联系我们表单
         var form = $('#contact-from'),
@@ -367,4 +371,4 @@
         });
     });
 
-})(jQuery, document, location, window);
+})(jQuery, document, location, Modernizr, window);
