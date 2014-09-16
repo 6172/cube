@@ -23,9 +23,6 @@
                 padding: 0;
             }
             .block {
-                margin: 0 auto;
-                min-width: 1000px;
-                max-width: 1400px;
                 width: 100%;
             }
             .company {
@@ -33,6 +30,7 @@
                 height: 714px;
             }
             .company > .wrap {
+                margin: 0 auto;
                 position: relative;
                 width: 1000px;
             }
@@ -73,6 +71,12 @@
                 position: absolute;
                 top: 323px;
                 width: 240px;
+            }
+            @media screen and (max-width:1000px) {
+                .company > .wrap {
+                    margin: auto;
+                    width: 100%;
+                }
             }
         </style>
     </head>
