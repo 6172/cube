@@ -29,7 +29,7 @@ html, body {
     padding:0;
 }
 
-h1, h2, h3, h4, h5, h6, p, blockquote, address, big, cite, code, em, font, img, small, strike, sub, sup, li, ol, ul, fieldset, form, label, legend, button, table, caption, tr, th, td,
+h1, h2, h3, h4, h5, h6, p, blockquote, address, big, cite, code, em, font, img, small, strike, sub, sup, li, ol, ul, dl, dt, dd, fieldset, form, label, legend, button, table, caption, tr, th, td,
 header, footer, nav, figure, article, section, audio, video, hgroup {
     margin: 0;
     padding: 0;
@@ -1387,6 +1387,8 @@ body {
     color: #fff;
 }
 
+.about-us {}
+
 .contact header {
     margin: 130px 0 0;
     text-align: center;
@@ -1539,6 +1541,197 @@ body {
     text-transform: uppercase;
     width: 100%;
 }
+
+
+.bottom-nav {
+    background-color: #2a2a2a;
+    bottom: 40px;
+    font-size: 0;
+    height: 56px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.bottom-nav > .screen,
+.bottom-nav > .company {
+    display: inline-block;
+    margin: 12px 0 0;
+}
+
+.bottom-nav > .screen {
+    margin: 0 80px 0 0;
+}
+
+.screen > li,
+.company > li {
+    float: left;
+    padding: 0 10px;
+}
+
+.bottom-nav a {
+    border-bottom: 3px solid transparent;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.bottom-nav a:hover {
+    color: #fff;
+}
+
+.bottom-nav .on {
+    border-color: #7ecef4;
+}
+
+#cover-layer {
+    background-color: rgba(0, 0, 0, .5);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+#hire,
+#companies {
+    background-color: #fff;
+    bottom: 0;
+    height: 87.5%;
+    left: 0;
+    margin: auto;
+    min-height: 600px;
+    min-width: 800px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 56%;
+}
+
+#companies {
+    display: none;
+}
+
+#hire > .close,
+#companies > .close {
+    background-color: #fff;
+    border-radius: 28px;
+    font-size: 40px;
+    font-weight: 200;
+    height: 56px;
+    line-height: 50px;
+    position: absolute;
+    right: -28px;
+    text-align: center;
+    top: -28px;
+    width: 56px;
+}
+
+#hire > h2,
+#companies > h2 {
+    background: url(images/logo-join-us.png) no-repeat center top;
+    margin: 40px 0 0;
+    text-indent: -9999em;
+    height: 148px;
+}
+
+#hire > .table {
+    border: 1px solid #eeeded;
+    border-top-left-radius: 27px;
+    border-top-right-radius: 27px;
+    font-size: 14px;
+    margin: 30px auto;
+    width: 84%;
+}
+
+.table > .title {
+    background-color: #eeeded;
+    border-top-left-radius: 27px;
+    border-top-right-radius: 27px;
+    height: 45px;
+}
+
+.title > p,
+.items-wrap > p {
+    float: left;
+    text-align: center;
+}
+
+.title > p {
+    color: #666;
+    line-height: 45px;
+}
+
+.items-wrap {
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.items:nth-child(2n+1) > .items-wrap {
+    background-color: #f9f9f9;
+}
+
+.items-wrap > p {
+    color: #333;
+    line-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+    white-space: nowrap;
+}
+
+.job-name {
+    padding: 0 1%;
+    width: 48%;
+}
+
+.job-type {
+    padding: 0 1%;
+    width: 23%;
+}
+
+.job-place {
+    padding: 0 1%;
+    width: 23%;
+}
+
+.job-details {
+    background: #f4f4f4 url(images/table-detail.png) repeat-x 0 0;
+    color: #666;
+    display: none;
+    padding: 30px 70px 1px;
+}
+
+.job-details > ul,
+.job-details > dl {
+    margin: 0 0 30px;
+}
+
+.job-details li {
+    float: left;
+    margin: 0 50px 0 0;
+}
+
+.job-details .strong {
+    font-weight: bold;
+    margin: 0 10px 0 0;
+}
+
+.job-details dt {
+    font-weight: bold;
+}
+
+.job-details dd {
+    text-align: justify;
+}
+
+
+
+/* 首页零散组件 */
 
 #cover-pages {
     background-color: #000;
