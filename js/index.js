@@ -369,6 +369,32 @@
                 });
             }
         });
+
+        // 招聘、分公司
+        var coverLayer = $('#cover-layer'),
+            hirePanel = $('#hire'),
+            companyPanel = $('#companies'),
+            scrollContent = coverLayer.find('.nano');
+
+        $('#join-company').on('click', function() {
+            hirePanel.show();
+            companyPanel.hide();
+            coverLayer.fadeIn();
+        });
+
+        $('#sub-company').on('click', function() {
+            hirePanel.hide();
+            companyPanel.show();
+            coverLayer.fadeIn();
+        });
+
+        coverLayer.on('click', '.close', function() {
+            coverLayer.fadeOut();
+        });
+
+        $('.layer-cont').on('click', '.items-wrap', function() {
+            $(this).next().slideToggle();
+        });
     });
 
 })(jQuery, document, location, Modernizr, window);

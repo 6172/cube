@@ -1529,20 +1529,6 @@ body {
     color: #000;
 }
 
-.contact footer {
-    background-color: #333;
-    bottom: 0;
-    font-size: 12px;
-    height: 40px;
-    line-height: 40px;
-    left: 0;
-    position: absolute;
-    text-align: center;
-    text-transform: uppercase;
-    width: 100%;
-}
-
-
 .bottom-nav {
     background-color: #2a2a2a;
     bottom: 40px;
@@ -1587,8 +1573,24 @@ body {
     border-color: #7ecef4;
 }
 
+.contact footer {
+    background-color: #333;
+    bottom: 0;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/* 加入我们、精唯体系 */
+
 #cover-layer {
-    background-color: rgba(0, 0, 0, .5);
+    background: url(images/opacity-black-5.png) repeat 0 0;
+    display: none;
     height: 100%;
     left: 0;
     position: fixed;
@@ -1601,6 +1603,7 @@ body {
 #companies {
     background-color: #fff;
     bottom: 0;
+    display: none;
     height: 87.5%;
     left: 0;
     margin: auto;
@@ -1610,10 +1613,6 @@ body {
     right: 0;
     top: 0;
     width: 56%;
-}
-
-#companies {
-    display: none;
 }
 
 #hire > .close,
@@ -1631,20 +1630,81 @@ body {
     width: 56px;
 }
 
-#hire > h2,
-#companies > h2 {
-    background: url(images/logo-join-us.png) no-repeat center top;
-    margin: 40px 0 0;
-    text-indent: -9999em;
-    height: 148px;
+#hire > header,
+#companies > header {
+    height: 30%;
+    max-height: 188px;
+    position: relative;
 }
 
-#hire > .table {
+#hire > header > h2,
+#companies > header > h2 {
+    background: url(images/logo-join-us.png) no-repeat center top;
+    bottom: 0;
+    height: 148px;
+    left: 0;
+    position: absolute;
+    text-indent: -9999em;
+    width: 100%;
+}
+
+.layer-cont {
+    height: 70%;
+}
+
+.layer-cont > .nano-content {
+    bottom: 20px;
+    top: 20px;
+    overflow: visible;
+    overflow-x: hidden;
+    /* IE 滚动条美化 */
+    scrollbar-arrow-color: #ffffff;
+    scrollbar-face-color: #cccccc;
+    scrollbar-darkshadow-color: #ffffff;
+    scrollbar-highlight-color: #ffffff;
+    scrollbar-3dlight-color: #ffffff;
+    scrollbar-shadow-color: #ffffff;
+    scrollbar-track-color: #ffffff;
+}
+
+/* webkit 内核滚动条美化 */
+.layer-cont > .nano-content::-webkit-scrollbar {
+    visibility: visible;
+}
+
+/* 滚动条默认显示样式 */
+.layer-cont > .nano-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .2);
+    border: 2px solid #fff;
+    border-radius: 6px;
+    height: 50px;
+    transition: all .3s ease 0s;
+}
+
+.layer-cont > .nano-content::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, .4);
+}
+  
+/* 滚动条大小 */
+.layer-cont > .nano-content::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+}
+  
+/*—滚动框背景样式–*/
+.layer-cont > .nano-content::-webkit-scrollbar-track-piece {
+    background-color: #fff;
+}
+
+.layer-cont .table {
     border: 1px solid #eeeded;
+    font-size: 14px;
+    margin: 10px auto;
+}
+
+.join-table {
     border-top-left-radius: 27px;
     border-top-right-radius: 27px;
-    font-size: 14px;
-    margin: 30px auto;
     width: 84%;
 }
 
@@ -1671,7 +1731,8 @@ body {
     overflow: hidden;
 }
 
-.items:nth-child(2n+1) > .items-wrap {
+.join-table .items:nth-child(2n+1) > .items-wrap,
+.company-table .items:nth-child(2n) > .items-wrap {
     background-color: #f9f9f9;
 }
 
@@ -1679,23 +1740,21 @@ body {
     color: #333;
     line-height: 50px;
     overflow: hidden;
+    padding: 0 1%;
     text-overflow: ellipsis;
     word-wrap: normal;
     white-space: nowrap;
 }
 
 .job-name {
-    padding: 0 1%;
     width: 48%;
 }
 
 .job-type {
-    padding: 0 1%;
     width: 23%;
 }
 
 .job-place {
-    padding: 0 1%;
     width: 23%;
 }
 
@@ -1729,7 +1788,33 @@ body {
     text-align: justify;
 }
 
+#companies > header > h2 {
+    background-image: url(images/logo-sub-company.png);
+}
 
+#companies .nano-content {
+    top: 30px;
+}
+
+.company-table {
+    width: 95%;
+}
+
+.company-name {
+    width: 31%;
+}
+
+.company-addr {
+    width: 31%;
+}
+
+.company-code {
+    width: 12%;
+}
+
+.company-tel {
+    width: 18%;
+}
 
 /* 首页零散组件 */
 
