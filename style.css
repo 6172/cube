@@ -1387,44 +1387,43 @@ body {
     color: #fff;
 }
 
-.about-us {}
+.about-us {
+    height: 610px;
+    left: 50%;
+    margin: -353px 0 0 -475px;
+    position: absolute;
+    top: 50%;
+    width: 940px;
+}
 
-.contact header {
-    margin: 130px 0 0;
+.about-us > header {
     text-align: center;
 }
 
-.contact h2 {
+.about-us h2 {
     font-size: 36px;
     height: 44px;
 }
 
-.contact h3 {
+.about-us h3 {
     font-size: 20px;
     height: 30px;
 }
 
-.contact p {
+.about-us p {
     font-size: 13px;
-    line-height: 24px;
+    line-height: 22px;
     margin: 30px auto 0;
     text-align: justify;
     width: 640px;
 }
 
 #contact-from {
-    margin: 75px auto 0;
+    margin: 100px auto 0;
     overflow: hidden;
-    width: 940px;
 }
 
-#contact-from > h3 {
-    font-size: 16px;
-    clear: both;
-    color: #ccc;
-    margin: 0 0 30px;
-    text-align: center;
-}
+/*#contact-from > h3 { font-size: 16px; clear: both; color: #ccc; margin: 0 0 30px; text-align: center; }*/
 
 #contact-from > fieldset {
     font-size: 0;
@@ -1445,18 +1444,23 @@ body {
     border-radius: 3px;
     color: #222;
     font-size: 16px;
-    margin: 0 0 25px;
+    margin: 0 0 27px;
     padding: 10px 30px;
     position: relative;
 }
 
+.half + .contact-input {
+    clear: both;
+}
+
 #contact-from .half {
-    display: inline-block;
-    width: 160px;
+    float: left;
+    width: 155px;
 }
 
 #contact-from .half + .half {
-    margin: 0 0 0 15px;
+    float: right;
+    clear: none;
 }
 
 .contact-input > label {
@@ -1467,7 +1471,7 @@ body {
 }
 
 .half > label {
-    width: 180px;
+    width: 155px;
 }
 
 .contact-input > input {
@@ -1477,6 +1481,7 @@ body {
     line-height: 30px;
     margin: 0;
     padding: 0;
+    word-break: normal;
     width: 100%;
 }
 
@@ -1484,8 +1489,8 @@ body {
     background-color: #fff;
     border-radius: 3px;
     font-size: 16px;
-    height: 180px;
-    margin: 0 0 25px;
+    height: 184px;
+    margin: 0 0 27px;
     padding: 10px 30px;
     position: relative;
 }
@@ -1498,8 +1503,8 @@ body {
     border: none;
     font-size: 14px;
     margin: 0;
-    max-height: 180px;
-    min-height: 180px;
+    max-height: 184px;
+    min-height: 184px;
     max-width: 395px;
     min-width: 395px;
     padding: 0;
@@ -1520,7 +1525,7 @@ body {
     color: #fff;
     height: 50px;
     line-height: 50px;
-    margin: 20px auto 0;
+    margin: 25px auto 0;
     width: 170px;
 }
 
@@ -2354,7 +2359,7 @@ body {
     width: 96%;
 }
 
-.half > label {
+.order-form .half > label {
     padding: 10px 4%;
     width: 92%;
 }
@@ -2427,42 +2432,6 @@ body {
 @media screen and (min-height: 820px) {
     .list-process-desc {
         bottom: 30px;
-    }
-}
-
-@media screen and (max-height: 805px) {
-    .contact header {
-        margin: 90px 0 0;
-    }
-    #contact-from {
-        margin: 70px auto 0;
-    }
-}
-
-@media screen and (max-height: 760px) {
-    .contact header {
-        margin: 60px 0 0;
-    }
-    #contact-from {
-        margin: 55px auto 0;
-    }
-}
-
-@media screen and (max-height: 720px) {
-    .contact header {
-        margin: 30px 0 0;
-    }
-    #contact-from {
-        margin: 40px auto 0;
-    }
-}
-
-@media screen and (max-height: 670px) {
-    .contact header {
-        margin: 15px 0 0;
-    }
-    #contact-from {
-        margin: 20px auto 0;
     }
 }
 

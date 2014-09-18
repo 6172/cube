@@ -370,6 +370,8 @@
             }
         });
 
+        form.find('textarea').on('mousewheel', stopBubble);
+
         // 招聘、分公司
         var coverLayer = $('#cover-layer'),
             hirePanel = $('#hire'),
