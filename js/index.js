@@ -392,6 +392,10 @@
 
         coverLayer.on('click', '.close', function() {
             coverLayer.fadeOut();
+        }).on('click', function(e) {
+            if(e.target === this) {
+                coverLayer.fadeOut();
+            }
         });
 
         $('.layer-cont').on('click', '.items-wrap', function() {
