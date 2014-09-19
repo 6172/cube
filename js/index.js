@@ -86,17 +86,14 @@
 
         // 第二屏：轮播图
         var products = $('#product-intro'),
-            productsCover = $('#product-cover').find('li'),
             sliderProduct,
             sliderProductCover;
 
         sliderProduct = products.bxSlider({
+            mode : 'fade',
             controls : false,
             pagerCustom : '#product-ctrl',
-            startSlide : 0,
-            onSlideBefore : function(slideElement, oldIndex, newIndex) {
-                productsCover.removeClass('on').eq(newIndex).addClass('on');
-            }
+            startSlide : 0
         });
 
         // sliderProduct.startAuto();
