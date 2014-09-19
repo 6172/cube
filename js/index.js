@@ -111,9 +111,24 @@
             videoArrow = videoListWraper.next(),
             videoListItems = videoList.find('a'),
             videoListNav = $('#video-intro-nav'),
-            player = !!window.flowAPI ? flowAPI : video[0],
+            player,
             videoListCtrl = $('.video-intro-ctrl'),
             videoPlaying = false;
+
+        // 兼容 IE8，使用 flowplayer
+        if(!tester.csstransforms) {
+            video.wrap('<div id="flowplayer" style="height:100%;width:100%;"></div>');
+            video.attr('type', 'vodeo/mp4');
+            $('#flowplayer').flowplayer({
+                swf : 'js/flowplayer/flowplayer.swf',
+                flashfit : true,
+                keyboard : false
+            });
+            player = flowplayer($('#flowplayer'));
+            console.log(player);
+        }else {
+            player = video[0];
+        }
 
         // 视频切换
         videoList.on('click', 'a', function() {
@@ -128,6 +143,9 @@
             player.pause();
             video.attr('src', link).hide();
             videoThumb.attr('src', thumb);
+            if(!tester.csstransforms) {
+                player.load(link);
+            }
             videoBtn.fadeIn();
         });
 
@@ -217,7 +235,8 @@
 
         $(doc).on('keydown', judgeSpace);
         $(doc).on('keyup', playAndPause);
-        video.on('click', pausePlay);
+        // 单击暂停会影响播放器自身控件的使用
+        // video.on('click', pausePlay);
 
         // 第四屏：首页文章
         var posterCtrl = $('#poster-show'),
