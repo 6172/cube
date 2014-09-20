@@ -130,14 +130,11 @@
         wall.nanoScroller();
     }
 
-    filterNav.on('click', 'a', function() {
-        var self = $(this),
-            brand = self.data('brand'),
-            process = self.data('process'),
-            selector = '.list-product-item';
-        
+    function filterProducts(brand, process) {
+        var selector = '.list-product-item';
+
         processDesc.hide().children().hide();
-        
+
         if(brand !== undefined && brand !== '') {
             selector = selector + '[data-brand=' + brand + ']';
         }
@@ -147,14 +144,36 @@
             processDesc.fadeIn();
         }
 
-        filterNav.find('a').removeClass('on');
-        self.addClass('on');
-
         allProducts.hide();
         $(selector).show();
-
         msnry.layout();
         setWallVerticalCenter();
+    }
+
+    filterNav.on('click', 'a', function() {
+        var self = $(this),
+            brand = self.data('brand'),
+            process = self.data('process');
+        
+        filterProducts(brand, process);
+        filterNav.find('a').removeClass('on');
+        self.addClass('on');
+    });
+
+    $(document).ready(function() {
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)'),
+                results = regex.exec(location.search);
+            return results == null ? '' : decodeURIComponent(results[1]);//results[1].replace(/\+/g, ' ')
+        }
+
+        var brand = getParameterByName('brand');
+        filterProducts(brand);
+        if(brand !== '') {
+            filterNav.find('a').removeClass('on');
+            filterNav.find('a[data-brand="'+brand+'"]').eq(0).addClass('on');
+        }
     });
 
     $(window).on('resize', function() {
