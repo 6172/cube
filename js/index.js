@@ -77,6 +77,7 @@
             sliderMain;
 
         sliderMain = intro.bxSlider({
+            infiniteLoop : false,
             controls : false,
             startSlide : 0,
             auto : true,
@@ -91,6 +92,7 @@
 
         sliderProduct = products.bxSlider({
             mode : 'fade',
+            infiniteLoop : false,
             controls : false,
             pagerCustom : '#product-ctrl',
             startSlide : 0

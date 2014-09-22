@@ -480,3 +480,29 @@
     });
 
 })(jQuery, document, window);
+
+(function($, doc, exports) {
+
+    function resizeImg(container, pic) {
+        var width = pic.width(),
+            height = pic.width(),
+            containerWidth = container.width(),
+            containerheight = container.height();
+
+        var containerRatio = containerWidth / containerheight,
+            ratio = width / height;
+
+        if(ratio < containerRatio) {
+            pic.style.height = 'auto';
+            pic.style.width = '100%';
+        }else {
+            pic.style.width = 'auto';
+            pic.style.height = '100%';
+        }
+    }
+
+    function setImgCover(container) {
+
+    }
+
+})(jQuery, document, window);
