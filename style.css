@@ -168,7 +168,8 @@ body {
 #nav,
 .menu-line,
 .bx-pager-link,
-.product-nav-item,
+/*.product-nav-item,*/
+.product-nav-item > .word,
 .product-view-all,
 #video-intro a:after,
 #video-btn > b,
@@ -1026,9 +1027,9 @@ body {
     width: 17%;
 }
 
-.product-nav-item:hover {
+/*.product-nav-item:hover {
     top: -100%;
-}
+}*/
 
 .product-nav-item:first-child {
     border-left: none;
@@ -1046,13 +1047,14 @@ body {
 }
 
 .product-nav-item > .icon {
+    display: none; /* from display: block; */
     background-color: #fff;
     background-color: rgba(255, 255, 255, .8);
     background-image: url(images/icon-products.png);
     background-repeat: no-repeat;
     background-position: 0 0;
 }
-
+/*
 .product-nav-item > .icon-0 {
     background-position: 50% 0;
 }
@@ -1077,21 +1079,30 @@ body {
     background-position: 50% -350px;
 }
 
-.product-nav > .active  > .icon {
+.product-nav > .active > .icon {
     background-color: #ccc;
     background-color: rgba(204, 204, 204, .8);
-}
+}*/
 
 .product-nav-item > .word {
-    background-color: #4b4d4e;
-    background-color: rgba(75, 77, 78, .8);
-    color: #fff;
+    background-color: #fff; /* from #4b4d4e */
+    background-color: rgba(255, 255, 255, .8); /* from rgba(75, 77, 78, .8) */
+    color: #424242; /* from #fff */
     font-weight: normal;
     line-height: 70px;
     text-align: center;
 }
 
+.product-nav-item:hover > .word {
+    background-color: #4b4d4e;
+    background-color: rgba(75, 77, 78, .8);
+    color: #fff;
+}
 
+.product-nav > .active > .word {
+    background-color: #ccc;
+    background-color: rgba(204, 204, 204, .8);
+}
 
 /* 视频展示 */
 
@@ -2536,13 +2547,13 @@ body {
     .product-intro-item.pii-6 {
         background-image: url(images/product-6.jpg);
     }
-    .product-nav-item:hover {
+    /*.product-nav-item:hover {
         top: 0;
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
-    }
+    }*/
 }
 
 @media screen and (min-height: 740px) {
