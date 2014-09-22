@@ -1491,6 +1491,10 @@ body {
     text-align: center;
 }
 
+.about-us > header img {
+    margin: 0 10px 0 0;
+}
+
 .about-us h2 {
     font-size: 36px;
     height: 44px;
@@ -1504,9 +1508,23 @@ body {
 .about-us p {
     font-size: 13px;
     line-height: 22px;
-    margin: 30px auto 0;
+    margin: 0 auto;
     text-align: justify;
     width: 640px;
+}
+
+.about-us .desc {
+    margin-top: 30px;
+}
+
+.about-us .tel {
+    margin-top: 5px;
+}
+
+.about-us .tel strong {
+    font-weight: normal;
+    font-size: 24px;
+    margin: 0 5px 0 0;
 }
 
 #contact-from {
