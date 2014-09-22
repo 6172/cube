@@ -2536,8 +2536,8 @@ body {
 /* Contact */
 
 @media screen and (min-height: 1px) {
-    .list-page {
-        /*background: #424242 url(images/bg-list.jpg) no-repeat 0 0;background-size: cover;*/
+    /*.list-page {
+        background: #424242 url(images/bg-list.jpg) no-repeat 0 0;background-size: cover;
     }
     .product-intro-item > .cover-img {
         display: none;
@@ -2565,7 +2565,7 @@ body {
     .product-intro-item.pii-6 {
         background-image: url(images/product-6.jpg);
     }
-    /*.product-nav-item:hover {
+    .product-nav-item:hover {
         top: 0;
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
