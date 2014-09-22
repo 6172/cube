@@ -481,28 +481,70 @@
 
 })(jQuery, document, window);
 
-(function($, doc, exports) {
+// 作为背景的图片自适应容器（cover）
+(function($, doc, exports, tester) {
 
-    function resizeImg(container, pic) {
-        var width = pic.width(),
-            height = pic.width(),
-            containerWidth = container.width(),
-            containerheight = container.height();
+    $.fn.imgResize = function() {
+        var pics = this.find('.cover-img');
+        var self = this;
 
-        var containerRatio = containerWidth / containerheight,
-            ratio = width / height;
+        function resizeImg(container, pic) {
+            var width = pic.naturalWidth,
+                height = pic.naturalHeight,
+                containerWidth = container.width(),
+                containerheight = container.height();
 
-        if(ratio < containerRatio) {
-            pic.style.height = 'auto';
-            pic.style.width = '100%';
-        }else {
-            pic.style.width = 'auto';
-            pic.style.height = '100%';
+            var containerRatio = containerWidth / containerheight,
+                ratio = width / height;
+
+            if(ratio < containerRatio) {
+                pic.style.height = 'auto';
+                pic.style.width = '100%';
+            }else {
+                pic.style.height = '100%';
+                pic.style.width = 'auto';
+            }
         }
-    }
 
-    function setImgCover(container) {
+        function windowResize(container, pic) {
+            var resizeTimer = null;
+            $(exports).on('resize', function() {
+                // clearTimeout(resizeTimer);
+                // resizeTimer = setTimeout(function() {
+                    resizeImg(container, pic);
+                // }, 100);
+            });
+        }
 
-    }
+        pics.each(function(index, ele) {
+            $(ele).attr('data-src', ele.src);
+        });
 
-})(jQuery, document, window);
+        if(tester.csstransforms) {
+            pics.on('load', function() {
+                resizeImg(self, this);
+                if(!this.hasLoaded) {
+                    windowResize(self, this);
+                }
+                this.hasLoaded = true;
+            });
+        }else {
+            pics.css({
+                bottom : '-100%',
+                margin : 'auto',
+                minHeight : '100%',
+                minWidth : '100%',
+                left : '-100%',
+                right : '-100%',
+                top : '-100%'
+            });
+        }
+        
+
+        pics.each(function(index, ele) {
+            ele.src = $(ele).attr('data-src');
+        });
+
+    };
+
+})(jQuery, document, window, Modernizr);

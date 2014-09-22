@@ -83,7 +83,8 @@
             auto : true,
             pause : 5000
         });
-        // sliderMain.startAuto();
+        
+        pages.find('.introduce').imgResize();
 
         // 第二屏：轮播图
         var products = $('#product-intro'),
@@ -98,7 +99,7 @@
             startSlide : 0
         });
 
-        // sliderProduct.startAuto();
+        products.imgResize();
 
         // 第三屏：视频切换、播放
         var videoWraper = $('#video-player'),
@@ -113,6 +114,9 @@
             player,
             videoListCtrl = $('.video-intro-ctrl'),
             videoPlaying = false;
+
+        videoWraper.imgResize();
+        videoList.imgResize();
 
         // 兼容 IE8，使用 flowplayer
         if(!tester.csstransforms) {
@@ -273,6 +277,8 @@
                 0, 0.003, pages
             );
         }
+
+        posterCtrl.find('a').imgResize();
 
         // 第五屏：联系我们表单
         var form = $('#contact-from'),

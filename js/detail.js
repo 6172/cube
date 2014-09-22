@@ -8,6 +8,9 @@
         e.preventDefault();
     }
 
+    // 左侧图片自适应
+    var imgList = $('#product-figure');
+    imgList.imgResize();
 
     // slider 切换
     var slide = $('#product-detail-pages'),

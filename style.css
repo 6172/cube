@@ -152,15 +152,10 @@ body {
 }
 
 .cover-img {
-    bottom: -100%;
     display: block;
-    margin: auto;
-    min-height: 100%;
-    min-width: 100%;
-    left: -100%;
+    left: 0;
     position: absolute;
-    right: -100%;
-    top: -100%;
+    top: 0;
 }
 
 /* Transitions --------------------------------------- */
