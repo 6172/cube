@@ -889,7 +889,7 @@ body {
     left: 5%;
     position: absolute;
     top: 0;
-    width: 45%;
+    width: 35%;
 }
 
 .pii-r .product-infos {
@@ -1970,6 +1970,7 @@ body {
     text-align: center;
     top: 30px;
     width: 98px;
+    z-index: 40;
 }
 
 .list-to-index:hover {
@@ -2086,6 +2087,8 @@ body {
 }
 
 .list-product-item {
+    background-color: #666;
+    border-radius: 15px;
     height: 240px;
     margin: 25px 0 0;
     overflow: hidden;
