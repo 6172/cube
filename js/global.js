@@ -517,7 +517,7 @@
         }
 
         pics.each(function(index, ele) {
-            $(ele).attr('data-src', ele.src);
+            $(ele).attr('data-src', ele.src).attr('src', '');
         });
 
         if(tester.csstransforms) {

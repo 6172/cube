@@ -268,7 +268,9 @@
             posterCont
                 .off('mousewheel', stopBubble)
                 .off('touchmove', stopBubble)
-                .off('touchend', stopBubble);
+                .off('touchend', stopBubble)
+                .find('article')
+                .hide();
         });
 
         if(!tester.touch) {
