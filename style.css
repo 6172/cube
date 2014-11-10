@@ -1200,7 +1200,7 @@ body {
 }
 
 .video-item {
-    height: 32%;
+    height: 49%;
     margin: 0 2% 1% 0;
     float: left;
     width: 32%;
@@ -1274,6 +1274,8 @@ body {
     font-size: 14px;
     font-weight: bold;
     height: 11%;
+    max-height: 28px;
+    line-height: 28px;
 }
 
 .video-item > p {
