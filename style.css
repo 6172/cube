@@ -1316,8 +1316,6 @@ body {
 }
 
 #video-player {
-    background-color: #000;
-    display: none;
     height: 100%;
     left: 0;
     overflow: hidden;
@@ -1327,32 +1325,33 @@ body {
     z-index: 999;
 }
 
-#video-player > video {
-    height: 100%;
-    width: 100%;
-}
-
-#video-player > p {
-    background-color: #fff;
-    border-radius: 12px;
-    bottom: 0;
-    color: #666;
-    font-size: 14px;
-    height: 100px;
-    line-height: 100px;
-    left: 0;
-    margin: auto;
+#video-player > iframe {
+    background-color: #000;
+    height: 360px;
+    left: 50%;
+    margin: -180px 0 0 -320px;
     position: absolute;
-    right: 0;
-    text-align: center;
-    top: 0;
-    width: 240px;
-    z-index: 50;
+    top: 50%;
+    width: 640px;
 }
 
-#video-player span {
+#video-close {
     color: #333;
-    font-size: 18px;
+    font-family: Tahoma;
+    font-size: 30px;
+    height: 50px;
+    left: 50%;
+    line-height: 50px;
+    margin: -220px 0 0 310px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: 50%;
+    width: 50px;
+}
+
+#video-close:hover {
+    color: #444;
 }
 
 /* 首页文章 - 5 条 */

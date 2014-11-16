@@ -121,107 +121,19 @@
             });
         });
 
-        // videoLists.each(function(index) {
-        //     var slider,
-        //         element = $(this).find('.video-videos');
-
-        //     slider = element.bxSlider({
-        //         mode : 'fade',
-        //         infiniteLoop : false,
-        //         pager : false,
-        //         startSlide : 0
-        //     });
-
-        //     if(index !== 0) {
-        //         this.style.display = 'none';
-        //     }
-        // });
-
         var videoLayer = $('#video-player'),
-            video = videoLayer.find('video'),
-            videoPlayer,
-            videoTiper = videoLayer.find('p'),
-            isVideoPlay = false,
-            tipTimer;
-
-        // 兼容 IE8，使用 flowplayer
-        if(!tester.csstransforms) {
-            video.wrap('<div id="flowplayer" style="height:100%;width:100%;"></div>');
-            video.attr('type', 'vodeo/mp4');
-            $('#flowplayer').flowplayer({
-                swf : 'js/flowplayer/flowplayer.swf',
-                flashfit : true,
-                keyboard : false
-            });
-            videoPlayer = flowplayer($('#flowplayer'));
-            console.log(videoPlayer);
-        }else {
-            videoPlayer = video[0];
-        }
+            videoFrame = videoLayer.find('iframe');
 
         $('#video-lists').on('click', 'figure', function() {
             var videoSrc = $(this).attr('data-video');
-            if(!tester.csstransforms) {
-                videoPlayer.load([ { mp4 : videoSrc } ]);
-            }else {
-                videoPlayer.src = videoSrc;
-            }
-            isVideoPlay = true;
-            videoLayer.fadeIn(300, function() {
-                videoPlayer.play();
-                clearTimeout(tipTimer);
-                tipTimer = setTimeout(function() {
-                    videoTiper.fadeOut();
-                }, 2000);
-            });
+            videoFrame.attr('src', videoSrc);
+            videoLayer.fadeIn();
         });
 
-        // 空格暂停（本屏有效）
-        // 阻止IE系列播放时选中视频按下空格默认暂停
-        function judgeSpecKey(e) {
-            var code = e.keyCode,
-                activeTag = doc.activeElement.tagName.toLowerCase();
-            // 空格键
-            if(code === 32 && activeTag !== 'input' && activeTag !== 'textarea') {
-                e.preventDefault();
-            }
-            // ESC 键
-            if(code === 27 && isVideoPlay) {
-                videoPlayer.pause();
-                videoLayer.fadeOut(function() {
-                    if(!tester.csstransforms) {
-                        videoPlayer.stop();
-                    }else {
-                        videoPlayer.src = '';
-                    }
-                    clearTimeout(tipTimer);
-                    videoTiper.show();
-                });
-            }
-        }
-
-        function playAndPause(e) {
-            if(isVideoPlay) {
-                if(e.keyCode === 32) {
-                    pausePlay(e);
-                }
-            }
-        }
-
-        function pausePlay(e) {
-            // 阻止Firefox播放时点击视频默认暂停
-            e.preventDefault();
-            if(videoPlayer.paused) {
-                videoPlayer.play();
-            }else {
-                videoPlayer.pause();
-            }
-        }
-
-        $(doc).on('keydown', judgeSpecKey);
-        $(doc).on('keyup', playAndPause);
-        // 单击暂停会影响播放器自身控件的使用
-        // video.on('click', pausePlay);
+        $('#video-close').on('click', function() {
+            videoLayer.fadeOut();
+            videoFrame.attr('src', '');
+        });
 
         // 第四屏：首页文章
         var posterCtrl = $('#poster-show'),
