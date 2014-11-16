@@ -1316,6 +1316,7 @@ body {
 }
 
 #video-player {
+    display: none;
     height: 100%;
     left: 0;
     overflow: hidden;
@@ -1336,12 +1337,14 @@ body {
 }
 
 #video-close {
+    background-color: #fff;
+    border-radius: 25px;
     color: #333;
     font-family: Tahoma;
-    font-size: 30px;
+    font-size: 34px;
     height: 50px;
     left: 50%;
-    line-height: 50px;
+    line-height: 48px;
     margin: -220px 0 0 310px;
     position: absolute;
     text-align: center;
@@ -1351,7 +1354,7 @@ body {
 }
 
 #video-close:hover {
-    color: #444;
+    color: #555;
 }
 
 /* 首页文章 - 5 条 */
